@@ -1,0 +1,25 @@
+{% macro include(fileName) -%}
+	{% include fileName ignore missing -%}
+{% endmacro -%}
+<!DOCTYPE html>
+<html>
+<head>
+	{{ include("inc/head.html") | tabIndent(1) }}
+</head>
+<body>
+
+<div id="wrap">
+	<!-- header -->
+	{{ include("inc/header.html") | tabIndent(1) }}
+
+	<!-- content -->
+	{% filter tabIndent(1) %}
+	{% block content %}{% endblock %}
+	{%- endfilter %}
+
+	<!-- footer -->
+	{{ include("inc/footer.html") | tabIndent(1) }}
+</div>
+	
+</body>
+</html>

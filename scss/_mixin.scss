@@ -1,0 +1,83 @@
+@mixin pos($p: null, $t: null, $r: null, $b: null, $l: null, $z: null, $a: null) {
+	position: $p;
+	z-index: $z;
+	@if $a != null {
+		top: $a;
+		right: $a;
+		bottom: $a;
+		left: $a;
+	} @else {
+		top: $t;
+		right: $r;
+		bottom: $b;
+		left: $l;
+	}
+}
+@mixin display($type: null, $float: null, $w: null, $h: null, $minw: null, $maxw: null, $minh: null, $maxh: null) {
+	display: $type;
+	float: $float;
+	width: $w;
+	height: $h;
+	min-width: $minw;
+	max-width: $maxw;
+	min-height: $minh;
+	max-height: $maxh;
+}
+@mixin font($l: null, $c: null, $s: null, $w: null, $a: null) {
+	color: $c;
+	font-size: $s;
+	font-weight: $w;
+	text-align: $a;
+	line-height: $l;
+}
+@mixin lineOverflow($h: null, $line: null) {
+	display: -webkit-box;
+	max-height: $h;
+	overflow: hidden;
+	-webkit-line-clamp: $line;
+	-webkit-box-orient: vertical;
+}
+@mixin arrow($dir: null, $w: null, $h: null, $c: null) {
+	border: $w solid transparent;
+	@if $dir == down {
+		border-top: $h solid $c;
+		border-bottom: 0;
+	} @else if $dir == up {
+		border-bottom: $h solid $c;
+		border-top: 0;
+	} @else if $dir == left {
+		border-right: $h solid $c;
+		border-left: 0;
+	} @else if $dir == right {
+		border-left: $h solid $c;
+		border-right: 0;
+	} 
+}
+@mixin bul($w: null, $h: null, $t: null, $r: null, $c: null) {
+	&:after {
+		content: "";
+		position: absolute;
+		top: $t; left: 0;
+		width: $w; height: $h;
+		border-radius: $r;
+		background: $c;
+	}
+}
+@mixin clear() {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+@mixin align() {
+	&:after {
+		content: "";
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+}
+@function r($px) {
+	@return ($px/2) * 0.1 + rem;
+}
