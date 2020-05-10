@@ -28,3 +28,71 @@ const device = {
 	}
 }
 device.init();
+
+const slide = {
+	obj : {},
+	create : (elm) => {
+		if(elm == 'mainSlide') {
+			let slideWrap = $('#'+elm);
+			let tab = slideWrap.find('.mainNav button');
+			let heightActive = function(){
+				let slideContainer = slideWrap.find('.mainSlideWrap > .swiper-wrapper');
+				let slideItem = slideContainer.find('> .swiper-slide');
+				slideItem.each(function(){
+					$(this).css('height',$(this).find('> .inner').height()+'px');
+				});
+			}
+			swiper = new Swiper('#'+elm+ ' .mainSlideWrap', {
+				loop: true,
+				autoHeight: true,
+				on: {
+					init : function() {
+						heightActive();
+						$('.slideLink').on('touchmove', function(){
+							event.stopPropagation();
+						})
+					},
+					slideChange : function(){
+						var num = this.realIndex;
+						heightActive();
+						tab.eq(num).addClass('active').siblings().removeClass('active');
+					}
+				}
+			});
+			slide.obj[elm] = swiper;
+			$(window).on('resize', function(){
+				heightActive();
+			});
+		}
+		if(elm == 'visualSlide') {
+			let slideWrap = $('#' + elm);
+			let slideItem = slideWrap.find('.swiper-slide');
+			let slideNum = slideWrap.find('.slideCount .numActive');
+			let slideTotal = slideWrap.find('.slideCount .numTotal');
+			let totalNum;
+			(slideItem.length < 10) ? totalNum = '0'+slideItem.length : totalNum = slideItem.length;
+			slideTotal.text(totalNum);
+			swiper = new Swiper('#' + elm + ' .slideContainer', {
+				loop: true,
+				speed: 500,
+				pagination: {
+					el: '.' + elm + ' .slidePage',
+					clickable: true,
+					renderBullet: function (index, className) {
+						return '<button type="button" class="' + className + '">' + (index + 1) + '</button>';
+					},
+				},
+				navigation: {
+					prevEl: '#' + elm + ' .slideNavPrev',
+					nextEl: '#' + elm + ' .slideNavNext',
+				}
+			});
+			slide.obj[elm] = swiper;
+			slide.obj[elm].on('slideChange', function(){
+				let num = this.realIndex + 1;
+				if(num < 10) num = '0'+num;
+				slideNum.text(num);
+			});
+		}
+	}
+}

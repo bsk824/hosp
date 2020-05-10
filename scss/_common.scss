@@ -1,5 +1,5 @@
 html {
-	@media screen and (min-width: 0) {font-size: 8.5px;}
+	@media screen and (min-width: 0) {font-size: 8.88px;}
 	@media screen and (min-width: 360px) {font-size: 62.5%;}
 	@media screen and (min-width: 375px) {font-size: 65.10%;}
 	@media screen and (min-width: 414px) {font-size: 71.87%;}
@@ -7,7 +7,8 @@ html {
 body {
 	-webkit-text-size-adjust: none;
 	margin: 0;
-	font: 1.4rem/1 "noto", "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
+	font: 1.3rem/1 "noto", "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
+	color: #111;
 }
 h1,h2,h3,h4,h5,h6,p,figure,ul,ol,dl,dd,fieldset {margin: 0;}
 ol, ul, td, fieldset {padding: 0;}
@@ -34,7 +35,10 @@ table {
 	table-layout: fixed;
 }
 fieldset, img {border: 0;}
-img {vertical-align: top;}
+img {
+	vertical-align: top;
+	max-width: 100%;
+}
 label, td img {vertical-align: middle;}
 h1,h2,h3,h4,h5,strong,b,th {font-weight: 400;}
 legend, caption, .hidden {
@@ -65,4 +69,38 @@ textarea {
 .inputTxt {
 	width: 100%;
 	border: r(1) solid #333;
+}
+
+.slideContainer {overflow: hidden;}
+.swiper-wrapper {
+	position: relative;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	.swiper-slide {
+		width: 100%;
+		flex-shrink: 0;
+	}
+}
+
+[class*="btnType"] {
+	display: inline-block;
+	align-items: center;
+	text-align: center;
+	box-sizing: border-box;
+}
+.btnType1 {
+	background: #112b66;
+	border: r(1) solid #112b66;
+	color: #fff;
+}
+.btnType2 {
+	background: #fff;
+	border: r(1) solid #112b66;
+	color: #22314e;
+}
+@keyframes background {
+	0% {background: #e80813;}
+	50% {background: #58009b;}
+	100% {background: #e80813;}
 }

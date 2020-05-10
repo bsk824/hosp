@@ -1,0 +1,112 @@
+#header {
+	position: relative;
+	animation: background 10s infinite;
+	.logo {
+		height: r(120);
+		@include align;
+		text-align: center;
+		a {
+			display: inline-block;
+			width: r(220); height: r(80);
+			vertical-align: middle;
+			background: url('/resource/images/img_logo.png') no-repeat;
+			background-size: 100%;
+			font-size: 0;
+		}
+	}
+	.btnMenu {
+		@include pos($p: absolute, $t: r(40), $l: r(40));
+		width: r(44); height: r(36);
+		font-size: 0;
+		&:before, span, &:after {
+			content: "";
+			@include pos($p: absolute, $t: 0, $l: 50%);
+			width: 100%; height: r(4);
+			background: #fff;
+			margin-left: r(-22);
+		}
+		span {
+			width: r(36);
+			top: 50%;
+			margin-top: r(-1);
+		}
+		&:after {
+			top: 100%;
+			margin-top: r(-2);
+		}
+	}
+	.btnSearch {
+		@include pos($p: absolute, $t: r(40), $r: r(40));
+		width: r(42); height: r(42);
+		background: url('/resource/images/btn_search.png') no-repeat;
+		background-size: 100%;
+		font-size: 0;
+	}
+	.txtSwipe {
+		display: none;
+		text-align: center;
+		img {
+			width: 100%;
+			max-width: r(720);
+		}
+		.main & {display: block;}
+	}
+}
+
+#footer {
+	border-top: r(20) solid #f4f4f4;
+	text-align: center;
+	font-size: r(24);
+	.footerSnsLink {
+		padding: r(20) 0;
+		border-top: r(1) solid #ddd;
+		a {
+			display: inline-block;
+			vertical-align: top;
+			width: r(80); height: r(80);
+			margin: 0 r(20);
+			background: url('/resource/images/ico_sns.png') no-repeat;
+			background-size: r(320);
+			border: r(1) solid #ddd;
+			border-radius: 50%;
+			font-size: 0;
+			&.kakao {background-position: r(-80) 0;}
+			&.fb {background-position: r(-160) 0;}
+			&.tw {background-position: 100% 0;}
+		}
+	}
+	.footerInfo {
+		border-top: r(1) solid #ddd;
+		padding: r(60) 0;
+		> div {
+			display: inline-block;
+			width: r(320);
+			padding-left: r(30);
+			border-left: r(1) solid #ddd;
+			text-align: left;
+			vertical-align: top;
+		}
+		.footerLink {
+			a {
+				display: block;
+				~ a {margin-top: r(30);}
+			}
+		}
+		.footerHospInfo {
+			.tel {
+				margin: 0 0 r(50);
+				a {
+					display: block;
+					margin-top: r(10);
+					font-size: r(48);
+				}
+			}
+			.address {
+				p {
+					color: #666;
+					~ p {margin-top: r(20);}
+				}
+			}
+		}
+	}
+}

@@ -8,17 +8,21 @@
 </head>
 <body>
 
-<div id="wrap">
+<div id="wrap" {{ pageVar.wrapClass }}>
+
 	<!-- header -->
 	{{ include("inc/header.html") | tabIndent(1) }}
+	<!-- //header -->
 
 	<!-- content -->
 	{% filter tabIndent(1) %}
 	{% block content %}{% endblock %}
 	{%- endfilter %}
+	<!-- //content -->
 
 	<!-- footer -->
 	{{ include("inc/footer.html") | tabIndent(1) }}
+	<!-- //footer -->
 </div>
 	
 </body>
