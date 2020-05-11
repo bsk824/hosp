@@ -29,39 +29,39 @@ const device = {
 }
 device.init();
 
+const mainHeight = () => {
+	let wrap = $('.mainSlideWrap > .swiper-wrapper');
+	let slideItem = wrap.find('> .swiper-slide');
+	slideItem.each(function(){
+		$(this).css('height',$(this).find('> .inner').height()+'px');
+	});
+}
 const slide = {
 	obj : {},
 	create : (elm) => {
 		if(elm == 'mainSlide') {
 			let slideWrap = $('#'+elm);
 			let tab = slideWrap.find('.mainNav button');
-			let heightActive = function(){
-				let slideContainer = slideWrap.find('.mainSlideWrap > .swiper-wrapper');
-				let slideItem = slideContainer.find('> .swiper-slide');
-				slideItem.each(function(){
-					$(this).css('height',$(this).find('> .inner').height()+'px');
-				});
-			}
-			swiper = new Swiper('#'+elm+ ' .mainSlideWrap', {
+			swiper = new Swiper('#'+elm+' .mainSlideWrap', {
 				loop: true,
 				autoHeight: true,
 				on: {
 					init : function() {
-						heightActive();
+						mainHeight();
 						$('.slideLink').on('touchmove', function(){
 							event.stopPropagation();
 						})
 					},
 					slideChange : function(){
 						var num = this.realIndex;
-						heightActive();
+						mainHeight();
 						tab.eq(num).addClass('active').siblings().removeClass('active');
 					}
 				}
 			});
 			slide.obj[elm] = swiper;
 			$(window).on('resize', function(){
-				heightActive();
+				mainHeight();
 			});
 		}
 		if(elm == 'visualSlide') {

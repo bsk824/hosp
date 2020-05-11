@@ -110,3 +110,32 @@
 		}
 	}
 }
+
+.subSection {
+	position: relative;
+	padding: r(55) r(40) r(60);
+	border-top: r(20) solid #f4f4f4;
+	.btnMore {
+		@include pos($p: absolute, $t: r(30), $r: r(50));
+		font-size: r(16);
+		text-align: center;
+		[class*="icon"] {
+			&:before {
+				content: "";
+				display: block;
+				width: r(50); height: r(50);
+				margin: 0 auto;
+				background: url('/resource/images/btn_more_ico.png') no-repeat;
+				background-size: r(200);
+			}
+		}
+		.icon2:before {background-position: r(-50) 0;}
+		.icon3:before {background-position: r(-100) 0;}
+		.icon4:before {background-position: r(-150) 0;}
+	}
+}
+.subTitle {
+	padding: 0 0 r(30);
+	border-bottom: r(1) solid #111;
+	font-size: r(36);
+}

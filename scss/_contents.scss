@@ -75,6 +75,25 @@
 }
 
 .cubeList {
+	@include clear;
+	margin: 0 r(-10);
+	li {
+		position: relative;
+		float: left;
+		width: 50%;
+		padding-top: 38%;
+		a {
+			@include pos($p: absolute, $a: r(10));
+			display: block;
+			padding: r(26) r(18);
+			color: #fff;
+		}
+		.txt {
+			@include lineOverflow($h: r(160), $line: 4);
+			line-height: r(40);
+			font-size: r(26);
+		}
+	}
 	.item1 a {background: #3465aa;}
 	.item2 a {background: #2da0d9;}
 	.item3 a {background: #09a274;}
@@ -92,14 +111,13 @@
 	ul {display: table;}
 	li {
 		display: table-cell;
+		width: auto;
+		float: none;
 		padding: 0 r(20) 0 0;
 		a {
-			position: relative;
-			display: block;
+			@include pos($p: relative, $a: auto);
 			width: r(260); height: r(200);
 			box-sizing: border-box;
-			padding: r(26) r(18);
-			color: #fff;
 		}
 		.txt {
 			@include lineOverflow($h: r(120), $line: 3);
@@ -111,6 +129,10 @@
 			font-size: r(24);
 		}
 	}
+}
+
+.blockList {
+	margin-top: r(20);
 }
 
 .listWrap {
@@ -251,6 +273,9 @@
 				}
 			}
 		}
+		.date {
+			@include pos($p: absolute, $b: 0, $r: 0);
+		}
 	}
 	.sns {
 		@include pos($p: absolute, $r: r(20), $b: r(10));
@@ -317,6 +342,40 @@
 			margin: r(10) 0 0;
 			border: r(1) solid #ddd;
 		}
+	}
+	.lineType {
+		background: #fff;
+		li {
+			margin: 0;
+			border-top: r(1) solid #ddd;
+		}
+		.itemBox {
+			padding: r(30) 0 r(30) r(350);
+			background: none;
+		}
+		.itemImg {
+			top: r(30);
+			left: 0;
+		}
+	}
+}
+.listType2 {
+	li {
+		position: relative;
+		height: r(130);
+		padding: r(30) r(110) r(30) 0;
+		box-sizing: border-box;
+		border-bottom: r(1) solid #ddd;
+	}
+	.txt {
+		display: block;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		line-height: 1.2;
+	}
+	.date {
+		@include pos($p: absolute, $r: 0, $b: r(20));
 	}
 }
 
@@ -507,5 +566,43 @@
 			th {background: #f8f8f8;}
 			.etc {text-align: left;}
 		}
+	}
+}
+
+.commuQuickLink {
+	display: flex;
+	span {
+		flex: 1;
+		padding: r(30) 0;
+		text-align: center;
+		font-size: r(24);
+		&:before {
+			content: "";
+			display: block;
+			width: r(122); height: r(122);
+			margin: 0 auto r(12);
+			background: url('/resource/images/ico_link2.png') no-repeat;
+			background-size: r(488);
+		}
+		&.link2:before {background-position: r(-122) 0}
+		&.link3:before {background-position: r(-244) 0}
+		&.link4:before {background-position: r(-366) 0}
+	}
+}
+
+.mainNoti {
+	background: #f4f4f4 url('/resource/images/btn_link3.png') no-repeat right r(40) top 50%;
+	background-size: r(20);
+	+ .subSection {border: 0;}
+	a {
+		display: block;
+		height: r(80);
+		padding: r(30) r(100) 0 r(94);
+		box-sizing: border-box;
+		background: url('/resource/images/ico_noti.png') no-repeat r(40) 50%;
+		background-size: r(35);
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
 	}
 }
