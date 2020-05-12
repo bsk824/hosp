@@ -10,7 +10,7 @@ body {
 	font: 1.3rem/1 "noto", "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
 	color: #111;
 }
-h1,h2,h3,h4,h5,h6,p,figure,ul,ol,dl,dd,fieldset {margin: 0;}
+h1,h2,h3,h4,h5,h6,p,figure,ul,ol,dl,dd,fieldset,pre {margin: 0;}
 ol, ul, td, fieldset {padding: 0;}
 input, select, textarea, button, pre, a {
 	font-family: inherit;
@@ -55,34 +55,82 @@ button {
 	border: 0;
 	border-radius: 0;
 }
-pre {white-space: pre-wrap;}
+pre {white-space: pre-line;}
 
 select {
-	border: r(1) solid #333;
+	height: r(60);
+	padding: 0 r(20);
+	border: r(1) solid #ddd;
 }
 textarea {
 	width: 100%;
-	border: r(1) solid #333;
+	border: r(1) solid #ddd;
 	overflow: auto;
 	resize: none;
 }
 .inputTxt {
-	width: 100%;
-	border: r(1) solid #333;
+	height: r(60);
+	line-height: r(64);
+	padding: 0 r(20);
+	border: r(1) solid #ddd;
 }
-
-.slideContainer {overflow: hidden;}
-.swiper-wrapper {
+.inputChk {
+	-webkit-appearance: none;
 	position: relative;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: flex;
-	.swiper-slide {
+	@include display($type: inline-block, $w: r(28), $h: r(28));
+	margin-right: r(5);
+	background:#fff url('/resource/images/input_chk.png') no-repeat -999px 0;
+	background-size: r(24);
+	border: r(1) solid #1c2536;
+	border-radius: 0;
+	vertical-align: r(-3);
+	&:checked {background-position: 50%;}
+}
+.inputRadio {
+	@extend .inputChk;
+	background:#fff url('/resource/images/input_radio.png') no-repeat -999px 0;
+	border-radius: 50%;
+}
+.inputWrap {
+	border-bottom: r(1) solid #111;
+	select, .inputTxt {width: 100%;}
+	select {
+		background: url('/resource/images/ico_select2.png') no-repeat right r(20) top 50%;
+		background-size: r(21);
+	}
+	.row {
+		padding: r(30) 0;
+		~ .row {border-top: 1px solid #ddd;}
+	}
+	.th {
+		padding-bottom: r(20);
+		font-size: r(28);
+		.required {
+			color: #6c83ac;
+		}
+	}
+	.contactBox {
+		display: table;
 		width: 100%;
-		flex-shrink: 0;
+		.cell {
+			display: table-cell;
+			width: 30%;
+		}
+		.ts {
+			display: table-cell;
+			width: r(30);
+			text-align: center;
+			vertical-align: middle;
+		}
 	}
 }
 
+.ftc1 {color: #6c83ac;}
+
+.btnWrap {
+	display: flex;
+	margin-top: r(30);
+}
 [class*="btnType"] {
 	display: inline-block;
 	align-items: center;
@@ -99,6 +147,24 @@ textarea {
 	border: r(1) solid #112b66;
 	color: #22314e;
 }
+.btnType1-lg {
+	@extend .btnType1;
+	width: 100%; height: r(80);
+	line-height: r(80);
+}
+
+.slideContainer {overflow: hidden;}
+.swiper-wrapper {
+	position: relative;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	.swiper-slide {
+		width: 100%;
+		flex-shrink: 0;
+	}
+}
+
 @keyframes background {
 	0% {background: #e80813;}
 	50% {background: #58009b;}

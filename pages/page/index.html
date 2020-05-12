@@ -23,12 +23,13 @@
 
 				<!-- 간편예약 -->
 				{{ include("inc/main4.html") | tabIndent(4) }}
-
 			</div>
 		</div>
 	</div>
 	<script>
-		slide.create('mainSlide');
+		window.addEventListener('load', () => {
+			slide.create('mainSlide');
+		});
 	</script>
 </div>
 

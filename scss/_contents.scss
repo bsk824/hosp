@@ -606,3 +606,34 @@
 		overflow: hidden;
 	}
 }
+
+.privacyAgree {
+	position: relative;
+	.tit {padding: r(28) r(40);}
+	.box {
+		overflow: auto;
+		height: r(320);
+		padding: r(40);
+		box-sizing: border-box;
+		background: #f8f8f8;
+		font-size: r(24);
+		line-height: 1.4;
+	}
+	.agree {
+		@include pos($p: absolute, $t: r(30), $r: r(40));
+	}
+	+ .subSection {border-top: 0;}
+}
+.txtRequired {
+	margin: r(10) 0 r(-20);
+	text-align: right;
+	font-size: r(18);
+	span {color: #6c83ac;}
+}
+.txtAlert {
+	padding-left: r(60);
+	background: url('/resource/images/ico_alert.png') no-repeat 0 50%;
+	background-size: r(31);
+	font-size: r(26);
+	line-height: 1.4;
+}

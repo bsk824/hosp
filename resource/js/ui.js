@@ -32,9 +32,11 @@ device.init();
 const mainHeight = () => {
 	let wrap = $('.mainSlideWrap > .swiper-wrapper');
 	let slideItem = wrap.find('> .swiper-slide');
+	let activeSlide = wrap.find('> .swiper-slide-active .inner');
 	slideItem.each(function(){
 		$(this).css('height',$(this).find('> .inner').height()+'px');
 	});
+	wrap.css('height', activeSlide.height()+'px');
 }
 const slide = {
 	obj : {},

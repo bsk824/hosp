@@ -750,13 +750,88 @@
 					</section>
 
 					<!-- 간편예약 -->
-					
+					<section class="swiper-slide">
+						<div class="inner">
+							
+							<div class="banner">
+								<a href="#"><img src="/resource/images/banner2.jpg" alt=""></a>
+							</div>
+							<div class="banner">
+								<a href="#"><img src="/resource/images/banner3.jpg" alt=""></a>
+							</div>
 
+							<div class="privacyAgree">
+								<h3 class="tit">개인정보 취급방침</h3>
+								<div class="box">
+									<pre>
+									여수백병원(이하 “본원”)은 수집하는 개인정보를 중요시하며, 「정보통신망 이용촉진 및 정보보호에 관한 법률」,「개인정보보호법」을 준수하기 위하여 노력하고 있습니다.
+									본원은 개인정보취급(처리)방침을 통하여 본원이 홈페이지를 통해 제공받은 개인정보를 어떠한 용도와 방식으로 이용하고 있으며, 개인정보보호를 위해 어떠한 조치를 취해지고 있는지 알려 드립니다.
+
+									제 1 조 개인정보 수집에 대한 동의
+									본원은 귀하께서 회원 가입 시 개인정보 취급방침 또는 이용약관의 내용을 공지하며 회원가입 버튼을 클릭할 경우 개인정보 수집에 대해 동의하신 것으로 봅니다.
+
+									제 2조 개인정보의 수집 항목 및 수집 방법
+
+									1. 수집하는 개인정보의 항목
+
+									본원이 관리하는 홈페이지를 통해 최초 회원 가입 또는 서비스 이용 시 이용자로부터 아래와 같은 개인정보를 수집하고 있으며, 이용자의 개인정보 수집 시 서비스 제공을 위하여 필요한 본원은 개인정보취급(처리)방침을 통하여 본원이 홈페이지를 통해 제공받은 개인정보를 어떠한 용도와 방식으로 이용하고 있으며, 개인정보보호를 위해 어떠한 조치를 취해지고 있는지 알려 드립니다.
+									</pre>
+								</div>
+								<label class="agree"><input type="checkbox" class="inputChk"> 동의합니다.</label>
+							</div>
+
+							<section class="subSection">
+								<h3 class="subTitle iconTit">간편예약</h3>
+								<p class="txtRequired"><span>*</span> 필수입력</p>
+								<div class="inputWrap">
+									<div class="row">
+										<div class="th">
+											<label for="inputName">환자이름 <span class="required">*</span></label>
+										</div>
+										<div class="td">
+											<input type="text" id="inputName" class="inputTxt" placeholder="성함을 입력해주세요.">
+										</div>
+									</div>
+									<div class="row">
+										<div class="th">
+											<label for="inputContact">전화번호 <span class="required">*</span></label>
+										</div>
+										<div class="td contactBox">
+											<span class="cell">
+												<select id="inputContact">
+													<option>선택</option>
+												</select>
+											</span>
+											<span class="ts">-</span>
+											<span class="cell">
+												<input type="text" class="inputTxt">
+											</span>
+											<span class="ts">-</span>
+											<span class="cell">
+												<input type="text" class="inputTxt">
+											</span>
+										</div>
+									</div>
+									<div class="row">
+										<p class="txtAlert"><span class="ftc1">당일 예약은 불가</span>하며 연락처를 남겨주시면 전문 상담원이 예약을 도와드립니다.</p>
+									</div>
+								</div>
+								<div class="btnWrap">
+									<button type="button" class="btnType1-lg">예약요청</button>
+								</div>
+								
+							</section>
+
+
+						</div>
+					</section>
 				</div>
 			</div>
 		</div>
 		<script>
-			slide.create('mainSlide');
+			window.addEventListener('load', () => {
+				slide.create('mainSlide');
+			});
 		</script>
 	</div>
 	<!-- //content -->

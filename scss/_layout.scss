@@ -138,4 +138,8 @@
 	padding: 0 0 r(30);
 	border-bottom: r(1) solid #111;
 	font-size: r(36);
+	&.iconTit {
+		background: url('/resource/images/ico_tit.png') no-repeat 100% 50%;
+		background-size: r(41);
+	}
 }
