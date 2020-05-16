@@ -1,6 +1,67 @@
 <header id="header">
 	<h1 class="logo"><a href="#">어깨는 날개입니다. 여수백 병원</a></h1>
-	<button type="button" class="btnMenu"><span>메뉴</span></button>
-	<button type="button" class="btnSearch">검색</button>
+	<button type="button" class="btnMenu" onclick="gnb();"><span>메뉴</span></button>
+	<button type="button" class="btnSearch" onclick="headerSearch();">검색</button>
+	<button type="button" class="btnBack" onclick="history.back();">뒤로가기</button>
+	<div class="searchWrap">
+		<div class="inner">
+			<input type="text" class="inputTxt">
+			<button type="button" class="btnSearch"></button>
+		</div>
+	</div>
+	<div id="gnb">
+		<div class="inner">
+			<div class="head">
+				<div class="top">
+					<span class="user">
+						<!-- <button type="button">로그인</button> -->
+						오미정님
+						<span>naver</span>
+					</span>
+					<div class="sns">
+						<a href="#" class="blog">블로그</a>
+						<a href="#" class="tw">트위터</a>
+						<a href="#" class="fb">페이스북</a>
+						<a href="#" class="kakao">카카오톡</a>
+					</div>
+				</div>
+				<p class="notice"><a href="#">여수백병원 홈페이지가 리뉴얼 되었습니다.여수백병원 홈페이지가 리뉴얼 되었습니다.</a></p>
+				<nav class="quickLink">
+					<a href="#" class="link1">진료시간</a>
+					<a href="#" class="link2">오시는길</a>
+					<a href="#" class="link3">진료예약</a>
+					<a href="#" class="link4">전화문의</a>
+				</nav>
+			</div>
+			<nav class="menuList">
+				<ul>
+					<li><button type="button" onclick="subMenu();">백병원소개</button>
+						<ul class="subMenu">
+							<li><a href="#">백병원소개</a></li>
+							<li><a href="#">의료진소개</a></li>
+							<li><a href="#">둘러보기</a></li>
+							<li><a href="#">오시는 길</a></li>
+						</ul>
+					</li>
+					<li><a href="#">어깨가 아파요</a></li>
+					<li><a href="#">관절이 불편해요</a></li>
+					<li><button type="button" onclick="subMenu();">커뮤니티</button>
+						<ul class="subMenu">
+							<li><a href="#">백병원소식</a></li>
+							<li><a href="#">감사합니다</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<div class="sign">
+				<!-- 로그인
+				<a href="#" class="link1">로그인</a>
+				<a href="#" class="link2">회원가입</a>
+				-->
+				<a href="#" class="link3">로그아웃</a>
+				<a href="#" class="link4">정보수정</a>
+			</div>
+		</div>
+	</div>
 	<p class="txtSwipe"><img src="/resource/images/txt_swipe.png" alt="여수백병원이 새로워졌습니다. 화면을 좌우로 밀어보세요."></p>
 </header>

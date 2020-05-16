@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div id="wrap" {{ pageVar.wrapClass }}>
+<div id="wrap" {% if pageVar.wrapClass %}class="{{pageVar.wrapClass}}"{% endif %}>
 
 	<!-- header -->
 	{{ include("inc/header.html") | tabIndent(1) }}

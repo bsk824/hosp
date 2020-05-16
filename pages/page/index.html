@@ -1,14 +1,14 @@
-{% set pageVar = { title: '', wrapClass: 'class="main"' } %}
+{% set pageVar = { title: '', wrapClass: 'main' } %}
 {% extends "inc/layout.html" %}
 
 {% block content -%}
 <div id="container">
 	<div id="mainSlide">
 		<div class="mainNav">
-			<button type="button" class="active" onclick="slide.obj.mainSlide.slideTo(1);">어깨가 아파요</button>
-			<button type="button" onclick="slide.obj.mainSlide.slideTo(2);">백병원소개</button>
-			<button type="button" onclick="slide.obj.mainSlide.slideTo(3);">커뮤니티</button>
-			<button type="button" onclick="slide.obj.mainSlide.slideTo(4);">간편예약</button>
+			<button type="button" class="active" onclick="slider.obj.mainSlide.slideTo(1);">어깨가 아파요</button>
+			<button type="button" onclick="slider.obj.mainSlide.slideTo(2);">백병원소개</button>
+			<button type="button" onclick="slider.obj.mainSlide.slideTo(3);">커뮤니티</button>
+			<button type="button" onclick="slider.obj.mainSlide.slideTo(4);">간편예약</button>
 		</div>
 		<div class="mainSlideWrap">
 			<div class="swiper-wrapper">
@@ -28,9 +28,8 @@
 	</div>
 	<script>
 		window.addEventListener('load', () => {
-			slide.create('mainSlide');
+			slider.create('mainSlide');
 		});
 	</script>
 </div>
-
 {%- endblock %}

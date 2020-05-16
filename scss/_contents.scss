@@ -76,7 +76,7 @@
 
 .cubeList {
 	@include clear;
-	margin: 0 r(-10);
+	margin: r(-10) r(-10) 0;
 	li {
 		position: relative;
 		float: left;
@@ -142,6 +142,7 @@
 		height: r(82);
 		border-bottom: r(1) solid #dbdbdb;
 		box-shadow: 0 r(2) r(2) r(2) rgba(0,0,0,.1);
+		font-size: 0;
 		.listOpt {float: left;}
 		.btnListType {
 			width: r(84); height: r(80);
@@ -153,20 +154,24 @@
 				background: url('/resource/images/btn_list_type.png') no-repeat;
 				background-size: r(50);
 			}
+			~ .listSort {
+				&:after {
+					content: "";
+					@include pos($p: absolute, $t: r(27), $l: 0);
+					height: r(27);
+					border-left: r(2) solid #111;
+				}
+				select {padding-left: r(30)}
+			}
+		
 		}
 		.listSort {
 			position: relative;
 			display: inline-block;
 			vertical-align: top;
-			&:after {
-				content: "";
-				@include pos($p: absolute, $t: r(27), $l: 0);
-				height: r(27);
-				border-left: r(2) solid #111;
-			}
 			select {
 				height: r(80);
-				padding: 0 r(25) 0 r(29);
+				padding: 0 r(35) 0 0;
 				border: 0;
 				font-size: r(26);
 				background: url('/resource/images/ico_select.png') no-repeat 100% 50%;
@@ -182,12 +187,12 @@
 				background: url('/resource/images/btn_search2.png') no-repeat 50% 50%;
 				background-size: r(34);
 			}
-			&.open .searchWrap {display: inline-block;}
 			.searchWrap {
 				display: none;
-				@include pos($p: absolute, $t: 0, $r: 0, $b: 0);
+				@include pos($p: absolute, $t: 0, $r: 0, $b: 1px);
 				background: #fff;
 				padding: r(15) r(20) 0 0;
+				&.open {display: block;}
 				.inputTxt {
 					width: r(440); height: r(50);
 					padding: 0 r(60) 0 r(20);
@@ -211,7 +216,7 @@
 }
 .listType {
 	background: #f4f4f4;
-	border-bottom: r(1) solid #ddd;
+	border-bottom: 1px solid #ddd;
 	ul {@include clear;}
 	li {margin-top: r(10);}
 	.itemBox {
@@ -292,19 +297,6 @@
 			&.fb {background-position: r(-120) 0;}
 		}
 	}
-	.btnMore {
-		width: 100%; height: r(100);
-		background: #fff;
-		border-top: r(1) solid #ddd;
-		&:after {
-			content: "";
-			display: block;
-			height: r(10);
-			margin-top: r(10);
-			background: url('/resource/images/btn_list_more.png') no-repeat 50% 0;
-			background-size: r(18);
-		}
-	}
 	.typeCube & {
 		padding: 0 r(20);
 		border: 0;
@@ -347,7 +339,7 @@
 		background: #fff;
 		li {
 			margin: 0;
-			border-top: r(1) solid #ddd;
+			~ li {border-top: r(1) solid #ddd;}
 		}
 		.itemBox {
 			padding: r(30) 0 r(30) r(350);
@@ -360,15 +352,37 @@
 	}
 }
 .listType2 {
+	border-bottom: 1px solid #ddd;
 	li {
 		position: relative;
-		height: r(130);
-		padding: r(30) r(110) r(30) 0;
+		padding: r(30) 0;
 		box-sizing: border-box;
-		border-bottom: r(1) solid #ddd;
+		~ li {border-top: r(1) solid #ddd;}
+	}
+	.sort {
+		position: relative;
+		float: left;
+		width: r(112);
+		line-height:  1.5;
+		&:after {
+			content: "";
+			@include pos($p: absolute, $t: r(10), $r: 0);
+			height: r(16);
+			border-right: r(1) solid #111;
+		}
+		~ .txt {
+			white-space: normal;
+			padding: 0;
+			margin: 0 0 r(30) r(130);
+			line-height: 1.5;
+			@include lineOverflow($h: r(80), $line: 2);
+			height: r(80);
+		}
 	}
 	.txt {
 		display: block;
+		margin-bottom: r(30);
+		padding-right: r(140);
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		overflow: hidden;
@@ -376,6 +390,21 @@
 	}
 	.date {
 		@include pos($p: absolute, $r: 0, $b: r(20));
+	}
+}
+.btnMoreList {
+	button {
+		width: 100%; height: r(100);
+		background: #fff;
+		border-top: r(1) solid #ddd;
+		&:after {
+			content: "";
+			display: block;
+			height: r(10);
+			margin-top: r(10);
+			background: url('/resource/images/btn_list_more.png') no-repeat 50% 0;
+			background-size: r(18);
+		}
 	}
 }
 
@@ -636,4 +665,102 @@
 	background-size: r(31);
 	font-size: r(26);
 	line-height: 1.4;
+}
+
+.loginWrap {
+	position: relative;
+	padding: r(90) r(40) 0;
+	text-align: center;
+	.title {
+		margin: 0 0 r(35);
+		font-size: r(40);
+	}
+	.row {
+		padding: r(80) 0 r(60);
+		~ .row {
+			border-top: r(1) solid #112b66;
+		}
+		.btn {
+			margin: r(50) 0 0;
+			width: 100%; height: r(80);
+			color: #fff;
+		}
+		&.naver {
+			.tit img {width: r(323);}
+			.btn {background: #2cb400;}
+		}
+		&.kakao {
+			.tit img {width: r(301);}
+			.btn {background: #412e34;}
+		}
+	}
+	.btnBack {
+		@include pos($p: absolute, $t: r(40), $r: r(40));
+		font-size: 0;
+		width: r(37); height: r(36);
+		background: url('/resource/images/btn_close.png') no-repeat;
+		background-size: 100%;
+	}
+}
+
+.resultCount {
+	box-sizing: border-box;
+	height: r(80);
+	padding: r(26) 0 0 r(40);
+	background: #f4f4f4;
+	font-size: r(26);
+	.count {
+		font-size: r(36);
+	}
+	+ .subSection {border-top: 0;}
+}
+
+.thanksWrap {
+	.subTitle {
+		text-align: center;
+	}
+	.subTxt {
+		padding: r(30) 0 r(59);
+		text-align: center;
+		line-height: 1.5;
+	}
+	.btnWrite {
+		display: block;
+		box-sizing: border-box;
+		height: r(80);
+		padding-top: r(30);
+		text-align: center;
+		color: #fff;
+		background: #a51974;
+	}
+	.cubeList {
+		li {
+			padding-top: 48%; 
+			a {
+				padding: r(40) r(30);
+			}
+		}
+		.etc {
+			@include pos($p: absolute, $b: r(30), $l: r(30));
+			.name {
+				position: relative;
+				margin-left: r(38);
+				&:after {
+					content: "";
+					@include pos($p: absolute, $t: r(8), $l: r(-20));
+					height: r(16);
+					border-left: r(1) solid #fff;
+				}
+			}
+		}
+	}
+	.btnMoreList {
+		margin: r(10) 0 0;
+		border: 0;
+		button {
+			height: r(80);
+			border: r(1) solid #000;
+			&:after {display: none;}
+		}
+	}
 }

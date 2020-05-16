@@ -16,8 +16,69 @@
 	<!-- header -->
 	<header id="header">
 		<h1 class="logo"><a href="#">어깨는 날개입니다. 여수백 병원</a></h1>
-		<button type="button" class="btnMenu"><span>메뉴</span></button>
-		<button type="button" class="btnSearch">검색</button>
+		<button type="button" class="btnMenu" onclick="gnb();"><span>메뉴</span></button>
+		<button type="button" class="btnSearch" onclick="headerSearch();">검색</button>
+		<button type="button" class="btnBack" onclick="history.back();">뒤로가기</button>
+		<div class="searchWrap">
+			<div class="inner">
+				<input type="text" class="inputTxt">
+				<button type="button" class="btnSearch"></button>
+			</div>
+		</div>
+		<div id="gnb">
+			<div class="inner">
+				<div class="head">
+					<div class="top">
+						<span class="user">
+							<!-- <button type="button">로그인</button> -->
+							오미정님
+							<span>naver</span>
+						</span>
+						<div class="sns">
+							<a href="#" class="blog">블로그</a>
+							<a href="#" class="tw">트위터</a>
+							<a href="#" class="fb">페이스북</a>
+							<a href="#" class="kakao">카카오톡</a>
+						</div>
+					</div>
+					<p class="notice"><a href="#">여수백병원 홈페이지가 리뉴얼 되었습니다.여수백병원 홈페이지가 리뉴얼 되었습니다.</a></p>
+					<nav class="quickLink">
+						<a href="#" class="link1">진료시간</a>
+						<a href="#" class="link2">오시는길</a>
+						<a href="#" class="link3">진료예약</a>
+						<a href="#" class="link4">전화문의</a>
+					</nav>
+				</div>
+				<nav class="menuList">
+					<ul>
+						<li><button type="button" onclick="subMenu();">백병원소개</button>
+							<ul class="subMenu">
+								<li><a href="#">백병원소개</a></li>
+								<li><a href="#">의료진소개</a></li>
+								<li><a href="#">둘러보기</a></li>
+								<li><a href="#">오시는 길</a></li>
+							</ul>
+						</li>
+						<li><a href="#">어깨가 아파요</a></li>
+						<li><a href="#">관절이 불편해요</a></li>
+						<li><button type="button" onclick="subMenu();">커뮤니티</button>
+							<ul class="subMenu">
+								<li><a href="#">백병원소식</a></li>
+								<li><a href="#">감사합니다</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="sign">
+					<!-- 로그인
+					<a href="#" class="link1">로그인</a>
+					<a href="#" class="link2">회원가입</a>
+					-->
+					<a href="#" class="link3">로그아웃</a>
+					<a href="#" class="link4">정보수정</a>
+				</div>
+			</div>
+		</div>
 		<p class="txtSwipe"><img src="/resource/images/txt_swipe.png" alt="여수백병원이 새로워졌습니다. 화면을 좌우로 밀어보세요."></p>
 	</header>
 	<!-- //header -->
@@ -26,10 +87,10 @@
 	<div id="container">
 		<div id="mainSlide">
 			<div class="mainNav">
-				<button type="button" class="active" onclick="slide.obj.mainSlide.slideTo(1);">어깨가 아파요</button>
-				<button type="button" onclick="slide.obj.mainSlide.slideTo(2);">백병원소개</button>
-				<button type="button" onclick="slide.obj.mainSlide.slideTo(3);">커뮤니티</button>
-				<button type="button" onclick="slide.obj.mainSlide.slideTo(4);">간편예약</button>
+				<button type="button" class="active" onclick="slider.obj.mainSlide.slideTo(1);">어깨가 아파요</button>
+				<button type="button" onclick="slider.obj.mainSlide.slideTo(2);">백병원소개</button>
+				<button type="button" onclick="slider.obj.mainSlide.slideTo(3);">커뮤니티</button>
+				<button type="button" onclick="slider.obj.mainSlide.slideTo(4);">간편예약</button>
 			</div>
 			<div class="mainSlideWrap">
 				<div class="swiper-wrapper">
@@ -39,9 +100,9 @@
 							<div id="visualSlide" class="visualSlide">
 								<div class="slideContainer">
 									<div class="swiper-wrapper">
-										<div class="swiper-slide"><img src="/resource/images/temp/720x400.jpg" alt=""></div>
-										<div class="swiper-slide"><img src="/resource/images/temp/720x400.jpg" alt=""></div>
-										<div class="swiper-slide"><img src="/resource/images/temp/720x400.jpg" alt=""></div>
+										<div class="swiper-slide"><a href="#"><img src="/resource/images/temp/720x400.jpg" alt=""></a></div>
+										<div class="swiper-slide"><a href="#"><img src="/resource/images/temp/720x400.jpg" alt=""></a></div>
+										<div class="swiper-slide"><a href="#"><img src="/resource/images/temp/720x400.jpg" alt=""></a></div>
 									</div>
 									<span class="slideCount">
 										<span class="numActive">01</span> /
@@ -59,7 +120,7 @@
 								</div>
 							</div>
 							<script>
-								slide.create('visualSlide');
+								slider.create('visualSlide');
 							</script>
 							<div class="slideLink">
 								<ul class="cubeList">
@@ -116,18 +177,18 @@
 							<div class="listWrap">
 								<div class="listHead">
 									<div class="listOpt">
-										<button type="button" class="btnListType">리스트 형태 변경</button>
+										<button type="button" class="btnListType" onclick="listTypeToggle();">리스트 형태 변경</button>
 										<span class="listSort">
 											<select>
-												<option value="">최신순</option>
+												<option value="">전체보기</option>
 											</select>
 										</span>
 									</div>
 									<div class="listSearch">
-										<button type="button" class="btnSearch">검색</button>
+										<button type="button" class="btnSearch" onclick="listSearch.open();">검색</button>
 										<span class="searchWrap">
 											<input type="text" class="inputTxt">
-											<button type="button" class="btnSearchClose">키워드 삭제</button>
+											<button type="button" class="btnSearchClose" onclick="listSearch.close();">검색창 닫기</button>
 										</span>
 									</div>
 								</div>
@@ -169,8 +230,118 @@
 												</div>
 											</div>
 										</li>
+										<li>
+											<div class="itemBox">
+												<a href="#">
+													<div class="itemImg vod">
+														<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+														<span class="time">8:26</span>
+													</div>
+													<div class="itemInfo">
+														<span class="tit">어깨는 날개입니다.</span>
+														<span class="count">조회수 <span>1,492</span></span>
+													</div>
+												</a>
+												<div class="sns">
+													<a href="#" class="kakao">카카오톡</a>
+													<a href="#" class="fb">페이스북</a>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="itemBox">
+												<a href="#">
+													<div class="itemImg vod">
+														<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+														<span class="time">8:26</span>
+													</div>
+													<div class="itemInfo">
+														<span class="tit">어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.</span>
+														<span class="count">조회수 <span>123,492</span></span>
+													</div>
+												</a>
+												<div class="sns">
+													<a href="#" class="kakao">카카오톡</a>
+													<a href="#" class="fb">페이스북</a>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="itemBox">
+												<a href="#">
+													<div class="itemImg vod">
+														<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+														<span class="time">8:26</span>
+													</div>
+													<div class="itemInfo">
+														<span class="tit">어깨는 날개입니다.</span>
+														<span class="count">조회수 <span>1,492</span></span>
+													</div>
+												</a>
+												<div class="sns">
+													<a href="#" class="kakao">카카오톡</a>
+													<a href="#" class="fb">페이스북</a>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="itemBox">
+												<a href="#">
+													<div class="itemImg vod">
+														<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+														<span class="time">8:26</span>
+													</div>
+													<div class="itemInfo">
+														<span class="tit">어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.</span>
+														<span class="count">조회수 <span>123,492</span></span>
+													</div>
+												</a>
+												<div class="sns">
+													<a href="#" class="kakao">카카오톡</a>
+													<a href="#" class="fb">페이스북</a>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="itemBox">
+												<a href="#">
+													<div class="itemImg vod">
+														<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+														<span class="time">8:26</span>
+													</div>
+													<div class="itemInfo">
+														<span class="tit">어깨는 날개입니다.</span>
+														<span class="count">조회수 <span>1,492</span></span>
+													</div>
+												</a>
+												<div class="sns">
+													<a href="#" class="kakao">카카오톡</a>
+													<a href="#" class="fb">페이스북</a>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="itemBox">
+												<a href="#">
+													<div class="itemImg vod">
+														<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+														<span class="time">8:26</span>
+													</div>
+													<div class="itemInfo">
+														<span class="tit">어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.</span>
+														<span class="count">조회수 <span>123,492</span></span>
+													</div>
+												</a>
+												<div class="sns">
+													<a href="#" class="kakao">카카오톡</a>
+													<a href="#" class="fb">페이스북</a>
+												</div>
+											</div>
+										</li>
 									</ul>
-									<button type="button" class="btnMore">더보기</button>
+									<div class="btnMoreList">
+										<button type="button">더보기</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -610,7 +781,7 @@
 										</li>
 									</ul>
 								</div>
-								<a href="#" class="btnMore"><span class="icon1">더보기</span></a>
+								<a href="#" class="btnMoreLink"><span class="icon1">더보기</span></a>
 							</section>
 
 							<section class="subSection">
@@ -643,7 +814,7 @@
 										</li>
 									</ul>
 								</div>
-								<a href="#" class="btnMore"><span class="icon2">더보기</span></a>
+								<a href="#" class="btnMoreLink"><span class="icon2">더보기</span></a>
 							</section>
 
 							<section class="subSection">
@@ -692,7 +863,7 @@
 										</li>
 									</ul>
 								</div>
-								<a href="#" class="btnMore"><span class="icon3">더보기</span></a>
+								<a href="#" class="btnMoreLink"><span class="icon3">더보기</span></a>
 							</section>
 
 							<section class="subSection">
@@ -743,7 +914,7 @@
 										</li>
 									</ul>
 								</div>
-								<a href="#" class="btnMore"><span class="icon4">더보기</span></a>
+								<a href="#" class="btnMoreLink"><span class="icon4">더보기</span></a>
 							</section>
 
 						</div>
@@ -830,7 +1001,7 @@
 		</div>
 		<script>
 			window.addEventListener('load', () => {
-				slide.create('mainSlide');
+				slider.create('mainSlide');
 			});
 		</script>
 	</div>

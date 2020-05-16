@@ -1,0 +1,110 @@
+{% set pageVar = { title: '백병원소식 &lt; ' } %}
+{% extends "inc/layout.html" %}
+
+{% block content -%}
+<div id="container">
+	<div class="location">
+		<div class="locBox">
+			<button type="button" class="btn" onclick="locOpen();">커뮤니티</button>
+			<ul class="list">
+				<li><a href="#">백병원 소개</a></li>
+				<li><a href="#">커뮤니티</a></li>
+			</ul>
+		</div>
+		<div class="locBox">
+			<button type="button" class="btn" onclick="locOpen();">백병원소식</button>
+			<ul class="list">
+				<li><a href="#">백병원소식</a></li>
+				<li><a href="#">경험한 여수백병원</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	
+	<section class="subSection">
+		<h3 class="subTitle">병원소식</h3>
+		<div class="listWrap">
+			<div class="listHead">
+				<div class="listOpt">
+					<span class="listSort">
+						<select>
+							<option value="">최신순</option>
+						</select>
+					</span>
+				</div>
+				<div class="listSearch">
+					<button type="button" class="btnSearch" onclick="listSearch.open();">검색</button>
+					<span class="searchWrap">
+						<input type="text" class="inputTxt">
+						<button type="button" class="btnSearchClose" onclick="listSearch.close();">검색창 닫기</button>
+					</span>
+				</div>
+			</div>
+			<div class="listType2">
+				<ul>
+					<li>
+						<a href="#">
+							<span class="sort">알립니다</span>
+							<span class="txt">[공지] 여수백병원의 홈페이지가 리뉴얼 되었습니다여수백병원의 홈페이지가 리뉴얼 되었습니다여수백병원의 홈페이지가 리뉴얼 되었습니다</span>
+							<span class="date">2019.12.24</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="sort">채용정보</span>
+							<span class="txt">[공지] 여수백병원의 홈페이지가 리뉴얼 되었습니다</span>
+							<span class="date">2019.12.24</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="sort">사회공헌</span>
+							<span class="txt">사랑과 희망이 싹 트는 빨간밥차봉사</span>
+							<span class="date">2019.12.24</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="sort">알립니다</span>
+							<span class="txt">[공지] 여수백병원의 홈페이지가 리뉴얼 되었습니다여수백병원의 홈페이지가 리뉴얼 되었습니다여수백병원의 홈페이지가 리뉴얼 되었습니다</span>
+							<span class="date">2019.12.24</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="sort">채용정보</span>
+							<span class="txt">[공지] 여수백병원의 홈페이지가 리뉴얼 되었습니다</span>
+							<span class="date">2019.12.24</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="sort">사회공헌</span>
+							<span class="txt">사랑과 희망이 싹 트는 빨간밥차봉사</span>
+							<span class="date">2019.12.24</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="sort">채용정보</span>
+							<span class="txt">[공지] 여수백병원의 홈페이지가 리뉴얼 되었습니다</span>
+							<span class="date">2019.12.24</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="sort">사회공헌</span>
+							<span class="txt">사랑과 희망이 싹 트는 빨간밥차봉사</span>
+							<span class="date">2019.12.24</span>
+						</a>
+					</li>
+				</ul>
+				<div class="btnMoreList">
+					<button type="button">더보기</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</div>
+{%- endblock %}

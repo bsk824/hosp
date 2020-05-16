@@ -1,0 +1,112 @@
+{% set pageVar = { title: '경험한 여수백병원 &lt; ' } %}
+{% extends "inc/layout.html" %}
+
+{% block content -%}
+<div id="container">
+	<div class="location">
+		<div class="locBox">
+			<button type="button" class="btn" onclick="locOpen();">커뮤니티</button>
+			<ul class="list">
+				<li><a href="#">백병원 소개</a></li>
+				<li><a href="#">커뮤니티</a></li>
+			</ul>
+		</div>
+		<div class="locBox">
+			<button type="button" class="btn" onclick="locOpen();">경험한 여수백병원</button>
+			<ul class="list">
+				<li><a href="#">백병원소식</a></li>
+				<li><a href="#">경험한 여수백병원</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	
+	<section class="subSection thanksWrap">
+		<h3 class="subTitle">내가 경험한 여수백병원</h3>
+		<p class="subTxt">생생한 후기를 남겨주신 모든 분들께 감사드리며 <br> 응원을 감동으로 돌려드릴 수 있도록 최선을 다하겠습니다. </p>
+
+		<a href="#" class="btnWrite">내가 경험한 여수백병원 글쓰기</a>
+		
+		<div class="blockList">
+			<ul class="cubeList">
+				<li class="item1">
+					<a href="#">
+						<span class="txt">[제주] 이런이런 병원처음이야이런 병원처음이야이런 병원처음이야 병원처음이야런이런 병원처음이야이런 병원처음이야이런 병원처음이야 병원처음이야</span>
+						<span class="etc">
+							<span class="date">2019.12.24</span>
+							<span class="name">김갑*</span>
+						</span>
+					</a>
+				</li>
+				<li class="item2">
+					<a href="#">
+						<span class="txt">[전주] 이런이런 병원처음이야이런 병원처음이야이런 병원처음이야 병원처음이야</span>
+						<span class="etc">
+							<span class="date">2019.12.24</span>
+							<span class="name">김갑*</span>
+						</span>
+					</a>
+				</li>
+				<li class="item3">
+					<a href="#">
+						<span class="txt">[여수] 이런이런 병원처음이야이런 병원처음이야이런 병원처음이야 병원처음이야</span>
+						<span class="etc">
+							<span class="date">2019.12.24</span>
+							<span class="name">김갑*</span>
+						</span>
+					</a>
+				</li>
+				<li class="item4">
+					<a href="#">
+						<span class="txt">[광주] 이런이런 병원처음이야이런 병원처음이야이런 병원처음이야 병원처음이야</span>
+						<span class="etc">
+							<span class="date">2019.12.24</span>
+							<span class="name">김갑*</span>
+						</span>
+					</a>
+				</li>
+				<li class="item5">
+					<a href="#">
+						<span class="txt">[제주] 이런이런 병원처음이야이런 병원처음이야이런 병원처음이야 병원처음이야런이런 병원처음이야이런 병원처음이야이런 병원처음이야 병원처음이야</span>
+						<span class="etc">
+							<span class="date">2019.12.24</span>
+							<span class="name">김갑*</span>
+						</span>
+					</a>
+				</li>
+				<li class="item6">
+					<a href="#">
+						<span class="txt">[전주] 이런이런 병원처음이야이런 병원처음이야이런 병원처음이야 병원처음이야</span>
+						<span class="etc">
+							<span class="date">2019.12.24</span>
+							<span class="name">김갑*</span>
+						</span>
+					</a>
+				</li>
+				<li class="item7">
+					<a href="#">
+						<span class="txt">[여수] 이런이런 병원처음이야이런 병원처음이야이런 병원처음이야 병원처음이야</span>
+						<span class="etc">
+							<span class="date">2019.12.24</span>
+							<span class="name">김갑*</span>
+						</span>
+					</a>
+				</li>
+				<li class="item8">
+					<a href="#">
+						<span class="txt">[광주] 이런이런 병원처음이야이런 병원처음이야이런 병원처음이야 병원처음이야</span>
+						<span class="etc">
+							<span class="date">2019.12.24</span>
+							<span class="name">김갑*</span>
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="btnMoreList">
+			<button type="button">더보기</button>
+		</div>
+	</section>
+
+</div>
+{%- endblock %}

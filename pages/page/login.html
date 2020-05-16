@@ -1,0 +1,20 @@
+{% set pageVar = { title: '로그인 &lt; ' } %}
+{% extends "inc/layout.html" %}
+
+{% block content -%}
+<div id="container">
+	<div class="loginWrap">
+		<h2 class="title">LOGIN</h2>
+		<p class="subTxt">사용하시는 계정으로 편하게 로그인 후 서비스를 이용하세요.</p>
+		<div class="row naver">
+			<h3 class="tit"><img src="/resource/images/img_naver.png" alt="네이버"></h3>
+			<button type="button" class="btn">네이버 로그인</button>
+		</div>
+		<div class="row kakao">
+			<h3 class="tit"><img src="/resource/images/img_kakao.png" alt="카카오"></h3>
+			<button type="button" class="btn">카카오 로그인</button>
+		</div>
+		<button type="button" class="btnBack" onclick="history.back();">뒤로가기</button>
+	</div>
+</div>
+{%- endblock %}

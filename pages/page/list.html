@@ -1,0 +1,189 @@
+{% set pageVar = { title: '어깨 &lt; ' } %}
+{% extends "inc/layout.html" %}
+
+{% block content -%}
+<div id="container">
+	<div class="location">
+		<div class="locBox">
+			<button type="button" class="btn" onclick="locOpen();">어깨가 아파요</button>
+			<ul class="list">
+				<li><a href="#">어깨가 아파요</a></li>
+				<li><a href="#">어깨가 아파요</a></li>
+				<li><a href="#">어깨가 아파요</a></li>
+				<li><a href="#">어깨가 아파요</a></li>
+			</ul>
+		</div>
+	</div>
+	<p class="resultCount"><strong class="count">36건</strong>의 영상이 있습니다.</p>
+	<div class="listWrap">
+		<div class="listHead">
+			<div class="listOpt">
+				<button type="button" class="btnListType" onclick="listTypeToggle();">리스트 형태 변경</button>
+				<span class="listSort">
+					<select>
+						<option value="">최신순</option>
+					</select>
+				</span>
+			</div>
+			<div class="listSearch">
+				<button type="button" class="btnSearch" onclick="listSearch.open();">검색</button>
+				<span class="searchWrap">
+					<input type="text" class="inputTxt">
+					<button type="button" class="btnSearchClose" onclick="listSearch.close();">검색창 닫기</button>
+				</span>
+			</div>
+		</div>
+		<div class="listType">
+			<ul>
+				<li>
+					<div class="itemBox">
+						<a href="#">
+							<div class="itemImg vod">
+								<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+								<span class="time">8:26</span>
+							</div>
+							<div class="itemInfo">
+								<span class="tit">어깨는 날개입니다.</span>
+								<span class="count">조회수 <span>1,492</span></span>
+							</div>
+						</a>
+						<div class="sns">
+							<a href="#" class="kakao">카카오톡</a>
+							<a href="#" class="fb">페이스북</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="itemBox">
+						<a href="#">
+							<div class="itemImg vod">
+								<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+								<span class="time">8:26</span>
+							</div>
+							<div class="itemInfo">
+								<span class="tit">어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.</span>
+								<span class="count">조회수 <span>123,492</span></span>
+							</div>
+						</a>
+						<div class="sns">
+							<a href="#" class="kakao">카카오톡</a>
+							<a href="#" class="fb">페이스북</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="itemBox">
+						<a href="#">
+							<div class="itemImg vod">
+								<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+								<span class="time">8:26</span>
+							</div>
+							<div class="itemInfo">
+								<span class="tit">어깨는 날개입니다.</span>
+								<span class="count">조회수 <span>1,492</span></span>
+							</div>
+						</a>
+						<div class="sns">
+							<a href="#" class="kakao">카카오톡</a>
+							<a href="#" class="fb">페이스북</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="itemBox">
+						<a href="#">
+							<div class="itemImg vod">
+								<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+								<span class="time">8:26</span>
+							</div>
+							<div class="itemInfo">
+								<span class="tit">어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.</span>
+								<span class="count">조회수 <span>123,492</span></span>
+							</div>
+						</a>
+						<div class="sns">
+							<a href="#" class="kakao">카카오톡</a>
+							<a href="#" class="fb">페이스북</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="itemBox">
+						<a href="#">
+							<div class="itemImg vod">
+								<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+								<span class="time">8:26</span>
+							</div>
+							<div class="itemInfo">
+								<span class="tit">어깨는 날개입니다.</span>
+								<span class="count">조회수 <span>1,492</span></span>
+							</div>
+						</a>
+						<div class="sns">
+							<a href="#" class="kakao">카카오톡</a>
+							<a href="#" class="fb">페이스북</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="itemBox">
+						<a href="#">
+							<div class="itemImg vod">
+								<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+								<span class="time">8:26</span>
+							</div>
+							<div class="itemInfo">
+								<span class="tit">어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.</span>
+								<span class="count">조회수 <span>123,492</span></span>
+							</div>
+						</a>
+						<div class="sns">
+							<a href="#" class="kakao">카카오톡</a>
+							<a href="#" class="fb">페이스북</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="itemBox">
+						<a href="#">
+							<div class="itemImg vod">
+								<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+								<span class="time">8:26</span>
+							</div>
+							<div class="itemInfo">
+								<span class="tit">어깨는 날개입니다.</span>
+								<span class="count">조회수 <span>1,492</span></span>
+							</div>
+						</a>
+						<div class="sns">
+							<a href="#" class="kakao">카카오톡</a>
+							<a href="#" class="fb">페이스북</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="itemBox">
+						<a href="#">
+							<div class="itemImg vod">
+								<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+								<span class="time">8:26</span>
+							</div>
+							<div class="itemInfo">
+								<span class="tit">어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.어깨는 날개입니다.</span>
+								<span class="count">조회수 <span>123,492</span></span>
+							</div>
+						</a>
+						<div class="sns">
+							<a href="#" class="kakao">카카오톡</a>
+							<a href="#" class="fb">페이스북</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="btnMoreList">
+				<button type="button">더보기</button>
+			</div>
+		</div>
+	</div>
+</div>
+{%- endblock %}
