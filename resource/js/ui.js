@@ -29,6 +29,11 @@ const device = {
 }
 device.init();
 
+const getUrlParams = () => {
+	let params = {}
+	window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, (str, key, value) => { params[key] = value });
+	return params;
+}
 const clst = {
 	parent : null,
 	find : (_this, target) => {
@@ -91,19 +96,29 @@ const listTypeToggle = () => {
 	let listWrap = clst.find($this, 'listWrap');
 	listWrap.classList.toggle('typeCube');
 }
-const gnb = () => {
-	let doc = document.querySelector('html');
-	let gnb = document.querySelector('#gnb');
-	let inner = gnb.querySelector('.inner');
-	doc.classList.add('scrollLock');
-	gnb.classList.add('open');
-	gnb.addEventListener('click', () => {
-		doc.classList.remove('scrollLock');
-		gnb.classList.remove('open');
-	});
-	inner.addEventListener('click', () => {
-		event.stopPropagation();
-	});
+const gnb = {
+	doc : null,
+	gnb : null,
+	open : () => {
+		gnb.doc = document.querySelector('html');
+		gnb.gnb = document.querySelector('#gnb');
+		let inner = gnb.gnb.querySelector('.inner');
+
+		gnb.doc.classList.add('scrollLock');
+		gnb.gnb.classList.add('open');
+
+		gnb.gnb.addEventListener('click', () => {
+			gnb.close();
+		});
+		inner.addEventListener('click', () => {
+			event.stopPropagation();
+		});
+
+	},
+	close : () => {
+		gnb.doc.classList.remove('scrollLock');
+		gnb.gnb.classList.remove('open');
+	}
 }
 const headerSearch = () => {
 	let doc = document.querySelector('html');
@@ -169,7 +184,7 @@ const slide = {
 		let wrapH = 0;
 		wrap.style.cssText = 'opacity: 0;display:block;'
 		wrapH = wrap.clientHeight;
-		wrap.style.cssText = 'overflow:hidden;height:0;transition:height '+(time*0.001)+'s';
+		wrap.style.cssText = 'display:block;overflow:hidden;height:0;transition:height '+(time*0.001)+'s';
 		setTimeout(()=>{
 			wrap.style.height = wrapH + 'px';
 		},1);
@@ -208,6 +223,52 @@ const slide = {
 		(el.classList.contains(cls)) ? slide.close(el, time, cls, callBack) : slide.open(el, time, cls, callBack);
 	}
 }
+const acco = (obj, idx) => {
+	if(idx) {
+	} else {
+		let $this = obj;
+		let thisCont = nextNodeFind($this);
+		let wrap = clst.find($this, 'accoWrap');
+		let list = childFind(wrap, 'li');
+		if($this.parentNode.classList.contains('active')){
+			$this.parentNode.classList.remove('active');
+			slide.close(thisCont, '300', 'open');
+		} else {
+			list.forEach( el =>{
+				if(el.classList.contains('active')) {
+					el.classList.remove('active');
+					let cont = childFind(el, 'cont');
+					slide.close(cont, 300, 'open');
+				}
+			});
+			$this.parentNode.classList.add('active');
+			slide.open(thisCont, '300', 'open')
+		}
+	}
+}
+const mainReserv = (url) => {
+	let wrap = document.querySelector('#wrap');
+	if(wrap.classList.contains('main')) {
+		gnb.close();
+		slider.obj.mainSlide.slideTo(4);
+	} else {
+		window.location = url;
+	}
+}
+const hospShow = () => {
+	let $this = event.currentTarget;
+	acco($this);
+	slider.create('hospShow');
+}
+
+const historyOpen = () => {
+	let $this = event.currentTarget;
+	$this.parentNode.classList.toggle('open');
+}
+const shareToggle = () => {
+	let $this = event.currentTarget;
+	$this.parentNode.classList.toggle('open');
+}
 
 const slider = {
 	obj : {},
@@ -215,7 +276,7 @@ const slider = {
 		if(elm == 'mainSlide') {
 			let slideWrap = $('#'+elm);
 			let tab = slideWrap.find('.mainNav button');
-			swiper = new Swiper('#'+elm+' .mainSlideWrap', {
+			let swiper = new Swiper('#'+elm+' .mainSlideWrap', {
 				loop: true,
 				autoHeight: true,
 				on: {
@@ -223,16 +284,16 @@ const slider = {
 						mainHeight();
 						$('.slideLink').on('touchmove', () => {
 							event.stopPropagation();
-						})
-					},
-					slideChangeTransitionEnd : () => {
-						var num = swiper.realIndex;
-						mainHeight();
-						tab.eq(num).addClass('active').siblings().removeClass('active');
+						});
 					}
 				}
 			});
 			slider.obj[elm] = swiper;
+			slider.obj[elm].on('slideChangeTransitionEnd', () => {
+				let num = swiper.realIndex;
+				mainHeight();
+				tab.eq(num).addClass('active').siblings().removeClass('active');
+			});
 			window.addEventListener('resize',() => {
 				mainHeight();
 			});
@@ -245,7 +306,7 @@ const slider = {
 			let totalNum;
 			(slideItem.length < 10) ? totalNum = '0'+slideItem.length : totalNum = slideItem.length;
 			slideTotal.text(totalNum);
-			swiper = new Swiper('#' + elm + ' .slideContainer', {
+			let swiper = new Swiper('#' + elm + ' .slideContainer', {
 				loop: true,
 				speed: 500,
 				pagination: {
@@ -262,10 +323,45 @@ const slider = {
 			});
 			slider.obj[elm] = swiper;
 			slider.obj[elm].on('slideChange', () => {
-				let num = this.realIndex + 1;
+				let num = swiper.realIndex + 1;
 				if(num < 10) num = '0'+num;
 				slideNum.text(num);
 			});
+		}
+		if(elm == 'hospShow') {
+			let slideWrap = $('.' + elm + ' .active');
+			let slideNum = slideWrap.find('.slideNum .activeNum');
+			let slideTotal = slideWrap.find('.slideNum .totalNum');
+			slideTotal.text('');
+			if(slider.obj[elm]) {slider.obj[elm].destroy(true, true);}
+			slideTotal.text($('.' + elm + ' .active .swiper-slide').length);
+			let swiper = new Swiper('.' + elm + ' .active .slideContainer', {
+				loop: true,
+				speed: 500,
+				navigation: {
+					prevEl: '.slideNavPrev',
+					nextEl: '.slideNavNext',
+				}
+			});
+			slider.obj[elm] = swiper;
+			slider.obj[elm].on('slideChange',() => {
+				var num = swiper.realIndex + 1;
+				slideNum.text(num);
+			});
+		}
+		if(elm == 'awardSlide') {
+			let swiper = new Swiper('.' + elm + ' .slideContainer', {
+				loop: true,
+				speed: 500,
+				pagination: {
+					el: '.' + elm + ' .slidePage',
+					clickable: true,
+					renderBullet: function (index, className) {
+						return '<button type="button" class="' + className + '">' + (index + 1) + '</button>';
+					},
+				}
+			});
+			slider.obj[elm] = swiper;
 		}
 	}
 }

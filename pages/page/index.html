@@ -29,6 +29,9 @@
 	<script>
 		window.addEventListener('load', () => {
 			slider.create('mainSlide');
+			if(getUrlParams().mainActive) {
+				slider.obj.mainSlide.slideTo(getUrlParams().mainActive);
+			}
 		});
 	</script>
 </div>

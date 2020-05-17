@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>어깨 &lt; 여수백병원</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+	<link rel="stylesheet" href="/resource/font/font.css">
+	<link rel="stylesheet" href="/resource/css/style.css">
+	<script type="text/javascript" src="/resource/js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="/resource/js/swiper.min.js"></script>
+	<script type="text/javascript" src="/resource/js/ui.js"></script>
+</head>
+<body>
+
+<div id="wrap" >
+
+	<!-- header -->
+	<header id="header">
+		<h1 class="logo"><a href="#">어깨는 날개입니다. 여수백 병원</a></h1>
+		<button type="button" class="btnMenu" onclick="gnb.open();"><span>메뉴</span></button>
+		<button type="button" class="btnSearch" onclick="headerSearch();">검색</button>
+		<button type="button" class="btnBack" onclick="history.back();">뒤로가기</button>
+		<div class="searchWrap">
+			<div class="inner">
+				<input type="text" class="inputTxt">
+				<button type="button" class="btnSearch"></button>
+			</div>
+		</div>
+		<div id="gnb">
+			<div class="inner">
+				<div class="head">
+					<div class="top">
+						<span class="user">
+							<!-- <button type="button">로그인</button> -->
+							오미정님
+							<span>naver</span>
+						</span>
+						<div class="sns">
+							<a href="#" class="blog">블로그</a>
+							<a href="#" class="tw">트위터</a>
+							<a href="#" class="fb">페이스북</a>
+							<a href="#" class="kakao">카카오톡</a>
+						</div>
+					</div>
+					<p class="notice"><a href="#">여수백병원 홈페이지가 리뉴얼 되었습니다.여수백병원 홈페이지가 리뉴얼 되었습니다.</a></p>
+					<nav class="quickLink">
+						<a href="doctor.html" class="link1">진료시간</a>
+						<a href="map.html" class="link2">오시는길</a>
+						<a href="#" onclick="mainReserv('/html/index.html?mainActive=4');return false;" class="link3">진료예약</a>
+						<a href="tel:18775075" class="link4">전화문의</a>
+					</nav>
+				</div>
+				<nav class="menuList">
+					<ul>
+						<li><button type="button" onclick="subMenu();">백병원소개</button>
+							<ul class="subMenu">
+								<li><a href="hospinfo.html">백병원소개</a></li>
+								<li><a href="doctor.html">의료진소개</a></li>
+								<li><a href="hospshow.html">둘러보기</a></li>
+								<li><a href="map.html">오시는 길</a></li>
+							</ul>
+						</li>
+						<li><a href="list.html">어깨가 아파요</a></li>
+						<li><a href="list.html">관절이 불편해요</a></li>
+						<li><button type="button" onclick="subMenu();">커뮤니티</button>
+							<ul class="subMenu">
+								<li><a href="notice.html">백병원소식</a></li>
+								<li><a href="thanks.html">감사합니다</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="sign">
+					<!-- 로그인
+					<a href="#" class="link1">로그인</a>
+					<a href="#" class="link2">회원가입</a>
+					-->
+					<a href="#" class="link3">로그아웃</a>
+					<a href="#" class="link4">정보수정</a>
+				</div>
+			</div>
+		</div>
+		<p class="txtSwipe"><img src="/resource/images/txt_swipe.png" alt="여수백병원이 새로워졌습니다. 화면을 좌우로 밀어보세요."></p>
+	</header>
+	<!-- //header -->
+
+	<!-- content -->
+	<div id="container">
+		<div class="location">
+			<div class="locBox">
+				<button type="button" class="btn" onclick="locOpen();">어깨가 아파요</button>
+				<ul class="list">
+					<li><a href="#">어깨가 아파요</a></li>
+					<li><a href="#">어깨가 아파요</a></li>
+					<li><a href="#">어깨가 아파요</a></li>
+					<li><a href="#">어깨가 아파요</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<section class="vodView">
+			<div class="vodHead">
+				<h3 class="title">여수백병원' 오십견, 3일만에 극복하기여수백병원' 오십견, 3일만에 극복하기</h3>
+				<div class="etc">
+					<span class="view">1,492</span>
+					<span class="date">2019.08.21</span>
+				</div>
+			</div>
+			<div class="vodWrap">
+				<div class="vod">
+					<img src="/resource/images/temp/720x405.jpg" alt="">
+				</div>
+				<button type="button" class="btnPlay"><span class="play">play</span> WATCH NOW</button>
+				<p class="txt">여수백병원을 소개 합니다.</p>
+				<span class="time">0:00 / 10:26</span>
+				<button type="button" class="btnFull">full screen</button>
+				<div class="btnShare">
+					<button type="button" class="share" onclick="shareToggle();">공유</button>
+					<div class="box">
+						<button type="button" class="tw">트위터</button>
+						<button type="button" class="fb">페이스북</button>
+						<button type="button" class="kakao">카카오톡</button>
+						<button type="button" class="url">url</button>
+					</div>
+				</div>
+			</div>
+			<div class="vodCont">
+				<p>
+					오십견은 비교적 비수술 치료로도 높은 효과를 보이는 질환이다. 염증을 가라앉히는 약물을 어깨관절 내에 직접 주입하는 주사치료, 국소신경 마취하에 손으로 굳은 어깨를 펴주는 도수치료, 관절 내로 약물을 주입하여 관절주머니를 넓혀 주는 수압팽창술 등이 있다. 비수술 치료의 기본 원리는 좁아진 관절주머니를 넓히고, 통증을 조절하고, 감소된 운동 범위를 늘려가는 것이다. 수술적 치료는 대부분 관절내시경으로 진행돼 위험 부담이 크지 않다. 시간도 10분 정도밖에 걸리지 않는다.<br>
+					<br>
+					다만 오십견이 오래된 환자의 경우, 장기간 어깨관절 주변 근육들을 쓰지 않았을 가능성이 크고, 통증이 심해 관절의 움직임이 없다 보니 관절 주변 어깨 근육의 유연성도 그대로 굳어진다. 이렇게 굳은 근육은 유연성이 떨어져 갑자기 힘을 받게 되면 관절 자체가 상하기도 한다. 앞서 언급한 것처럼 갑자기 센 힘으로 어깨관절을 늘리면 팔뼈나 관절 속 뼈에 골절이 생기기도 한다. 어깨관절 주위를 지나는 신경도 관절이 오랫동안 굳어져 움직임이 없다가 갑자기 힘을 가하면 늘어나면서 찢어질 수 있다. 때문에 오십견의 도수치료는 숙련된 전문의의 지도로 부드러운 처치를 받는 것이 중요하다. 
+				</p>
+			</div>
+			<div class="vodShare">
+				<p class="txt">지금 보신 정보를 공유하세요!</p>
+				<div class="btn">
+					<button type="button" class="kakao">카카오톡</button>
+					<button type="button" class="fb">페이스북</button>
+					<button type="button" class="url">URL</button>
+				</div>
+			</div>
+		</section>
+		<section class="vodRecom">
+			<div class="cont">
+				<p class="tit">이런 영상은 어떠세요?</p>
+				
+				<a href="#" class="vodBox">
+					<div class="vod">
+						<span class="img"><img src="/resource/images/temp/640x320.jpg" alt=""></span>
+						<span class="time">8:26</span>
+					</div>
+					<p class="tit">여수백병원와 함께하면어깨통증도 즐거움이 됩니다.</p>
+					<p class="txt">이번에 SCI논문에 채택된 주제는 '동결견 환자에 적용한 사각근간 차단 마취 후 관절낭 수압팽창술의이번에 SCI논문에 채택된 주제는 '동결견 환자에 적용한 사각근간 차단 마취 후 관절낭 수압팽창술의</p>
+					<div class="etc">
+						<span class="date">2019.12.21</span>
+						<span class="view">1,492</span>
+					</div>
+				</a>
+			</div>
+			<div class="link">
+				<a href="#">지금 더 많은 영상을 만나보세요</a>
+			</div>
+		</section>
+	</div>
+	<!-- //content -->
+
+	<!-- footer -->
+	<footer id="footer">
+		<div class="footerSnsLink">
+			<a href="#" class="naver">네이버블로그</a>
+			<a href="#" class="kakao">카카오톡</a>
+			<a href="#" class="fb">페이스북</a>
+			<a href="#" class="tw">트위터</a>
+		</div>
+		<div class="footerInfo">
+			<div class="footerLink">
+				<a href="privacy.html">개인정보취급방침</a>
+				<a href="right.html">환전권리장전</a>
+				<a href="#">비급여고지</a>
+				<a href="doctor.html">진료시간 안내</a>
+				<a href="map.html">찾아오시는 길</a>
+			</div>
+			<div class="footerHospInfo">
+				<p class="tel">어깨를 책임지는 여수백병원 <a href="tel:18775075">1877-5075</a></p>
+				<div class="address">
+					<p>전라남도 여수시 여서1로 50</p>
+					<p>병원장:백창희</p>
+					<p>사업자등록번호:471-91-18201</p>
+				</div>
+			</div>
+		</div>
+		<p class="footerCopy">Copyright &copy; 2019 YEOSU100 Hospital. All Right Reserved.</p>
+	</footer>
+	<!-- //footer -->
+</div>
+	
+</body>
+</html>

@@ -265,6 +265,7 @@
 	}
 }
 #footer {
+	padding-bottom: r(90);
 	border-top: r(20) solid #f4f4f4;
 	text-align: center;
 	font-size: r(24);
@@ -277,13 +278,13 @@
 			width: r(80); height: r(80);
 			margin: 0 r(20);
 			background: url('/resource/images/ico_sns.png') no-repeat;
-			background-size: r(320);
+			background-size: r(410);
 			border: r(1) solid #ddd;
 			border-radius: 50%;
 			font-size: 0;
 			&.kakao {background-position: r(-80) 0;}
 			&.fb {background-position: r(-160) 0;}
-			&.tw {background-position: 100% 0;}
+			&.tw {background-position: r(-240) 0;}
 		}
 	}
 	.footerInfo {
@@ -401,6 +402,14 @@
 	&.iconTit {
 		background: url('/resource/images/ico_tit.png') no-repeat 100% 50%;
 		background-size: r(41);
+	}
+	&.iconTit2 {
+		background: url('/resource/images/ico_tit2.png') no-repeat 100% 50%;
+		background-size: r(38);
+	}
+	&.iconTit3 {
+		background: url('/resource/images/ico_tit3.png') no-repeat 100% 50%;
+		background-size: r(32);
 	}
 	.count {
 		@include pos($p: absolute, $t: 0, $r: 0);

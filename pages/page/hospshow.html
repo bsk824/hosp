@@ -1,0 +1,209 @@
+{% set pageVar = { title: '둘러보기 &lt; ' } %}
+{% extends "inc/layout.html" %}
+
+{% block content -%}
+<div id="container">
+	<div class="location">
+		<div class="locBox">
+			<button type="button" class="btn" onclick="locOpen();">백병원소개</button>
+			<ul class="list">
+				<li><a href="hospinfo.html">백병원소개</a></li>
+				<li><a href="notice.html">커뮤니티</a></li>
+			</ul>
+		</div>
+		<div class="locBox">
+			<button type="button" class="btn" onclick="locOpen();">둘러보기</button>
+			<ul class="list">
+				<li><a href="hospinfo.html">백병원소개</a></li>
+				<li><a href="doctor.html">의료진소개</a></li>
+				<li><a href="hospshow.html">둘러보기</a></li>
+				<li><a href="map.html">오시는 길</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="subSection">
+		<h3 class="subTitle iconTit2">백병원 둘러보기</h3>
+		<div class="hospShow">
+			<ul class="accoWrap">
+				<li class="active">
+					<button type="button" class="btn" onclick="hospShow();"><span class="floor">외관</span>여수백병원 정문</button>
+					<div class="cont open">
+						<div class="slideContainer">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor1_01.jpg" alt="">
+									<span>외부전경</span>
+								</li>
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor1_02.jpg" alt="">
+									<span>외부전경</span>
+								</li>
+							</ul>
+							<p class="slideNum"><span class="activeNum">1</span>/<span class="totalNum">total</span></p>
+							<div class="slideNav">
+								<button type="button" class="slideNavPrev">이전</button>
+								<button type="button" class="slideNavNext">다음</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<button type="button" class="btn" onclick="hospShow();"><span class="floor">식당</span>Happy Hour</button>
+					<div class="cont">
+						<div class="slideContainer">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor2_01.jpg" alt="">
+									<span>식당</span>
+								</li>
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor2_02.jpg" alt="">
+									<span>식당</span>
+								</li>
+							</ul>
+							<p class="slideNum"><span class="activeNum">1</span>/<span class="totalNum">total</span></p>
+							<div class="slideNav">
+								<button type="button" class="slideNavPrev">이전</button>
+								<button type="button" class="slideNavNext">다음</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<button type="button" class="btn" onclick="hospShow();"><span class="floor">1F</span>1층 로비</button>
+					<div class="cont">
+						<div class="slideContainer">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor3_01.jpg" alt="">
+									<span>1층</span>
+								</li>
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor3_02.jpg" alt="">
+									<span>1층</span>
+								</li>
+							</ul>
+							<p class="slideNum"><span class="activeNum">1</span>/<span class="totalNum">total</span></p>
+							<div class="slideNav">
+								<button type="button" class="slideNavPrev">이전</button>
+								<button type="button" class="slideNavNext">다음</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<button type="button" class="btn" onclick="hospShow();"><span class="floor">2F</span>2층 대기공간/MRI촬영실</button>
+					<div class="cont">
+						<div class="slideContainer">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor4_01.jpg" alt="">
+									<span>2F</span>
+								</li>
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor4_02.jpg" alt="">
+									<span>2F</span>
+								</li>
+							</ul>
+							<p class="slideNum"><span class="activeNum">1</span>/<span class="totalNum">total</span></p>
+							<div class="slideNav">
+								<button type="button" class="slideNavPrev">이전</button>
+								<button type="button" class="slideNavNext">다음</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<button type="button" class="btn" onclick="hospShow();"><span class="floor">3F</span>무균수술실</button>
+					<div class="cont">
+						<div class="slideContainer">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor5_01.jpg" alt="">
+									<span>3F</span>
+								</li>
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor5_02.jpg" alt="">
+									<span>3F</span>
+								</li>
+							</ul>
+							<p class="slideNum"><span class="activeNum">1</span>/<span class="totalNum">total</span></p>
+							<div class="slideNav">
+								<button type="button" class="slideNavPrev">이전</button>
+								<button type="button" class="slideNavNext">다음</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<button type="button" class="btn" onclick="hospShow();"><span class="floor">4F</span>운동치료센터/바람이 스치는 정원</button>
+					<div class="cont">
+						<div class="slideContainer">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor6_01.jpg" alt="">
+									<span>4F</span>
+								</li>
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor6_02.jpg" alt="">
+									<span>4F</span>
+								</li>
+							</ul>
+							<p class="slideNum"><span class="activeNum">1</span>/<span class="totalNum">total</span></p>
+							<div class="slideNav">
+								<button type="button" class="slideNavPrev">이전</button>
+								<button type="button" class="slideNavNext">다음</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<button type="button" class="btn" onclick="hospShow();"><span class="floor">병동</span>병동 스테이션</button>
+					<div class="cont">
+						<div class="slideContainer">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor7_01.jpg" alt="">
+									<span>병동</span>
+								</li>
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor7_02.jpg" alt="">
+									<span>병동</span>
+								</li>
+							</ul>
+							<p class="slideNum"><span class="activeNum">1</span>/<span class="totalNum">total</span></p>
+							<div class="slideNav">
+								<button type="button" class="slideNavPrev">이전</button>
+								<button type="button" class="slideNavNext">다음</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<button type="button" class="btn" onclick="hospShow();"><span class="floor">입원실</span>입원실 앞 휴게공간/입원실</button>
+					<div class="cont">
+						<div class="slideContainer">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor8_01.jpg" alt="">
+									<span>입원실</span>
+								</li>
+								<li class="swiper-slide">
+									<img src="/resource/images/floor/img_floor8_02.jpg" alt="">
+									<span>입원실</span>
+								</li>
+							</ul>
+							<p class="slideNum"><span class="activeNum">1</span>/<span class="totalNum">total</span></p>
+							<div class="slideNav">
+								<button type="button" class="slideNavPrev">이전</button>
+								<button type="button" class="slideNavNext">다음</button>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script>slider.create('hospShow');</script>
+</div>
+{%- endblock %}

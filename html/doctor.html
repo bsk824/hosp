@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>의료진소개 &lt; 여수백병원</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+	<link rel="stylesheet" href="/resource/font/font.css">
+	<link rel="stylesheet" href="/resource/css/style.css">
+	<script type="text/javascript" src="/resource/js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="/resource/js/swiper.min.js"></script>
+	<script type="text/javascript" src="/resource/js/ui.js"></script>
+</head>
+<body>
+
+<div id="wrap" >
+
+	<!-- header -->
+	<header id="header">
+		<h1 class="logo"><a href="#">어깨는 날개입니다. 여수백 병원</a></h1>
+		<button type="button" class="btnMenu" onclick="gnb.open();"><span>메뉴</span></button>
+		<button type="button" class="btnSearch" onclick="headerSearch();">검색</button>
+		<button type="button" class="btnBack" onclick="history.back();">뒤로가기</button>
+		<div class="searchWrap">
+			<div class="inner">
+				<input type="text" class="inputTxt">
+				<button type="button" class="btnSearch"></button>
+			</div>
+		</div>
+		<div id="gnb">
+			<div class="inner">
+				<div class="head">
+					<div class="top">
+						<span class="user">
+							<!-- <button type="button">로그인</button> -->
+							오미정님
+							<span>naver</span>
+						</span>
+						<div class="sns">
+							<a href="#" class="blog">블로그</a>
+							<a href="#" class="tw">트위터</a>
+							<a href="#" class="fb">페이스북</a>
+							<a href="#" class="kakao">카카오톡</a>
+						</div>
+					</div>
+					<p class="notice"><a href="#">여수백병원 홈페이지가 리뉴얼 되었습니다.여수백병원 홈페이지가 리뉴얼 되었습니다.</a></p>
+					<nav class="quickLink">
+						<a href="doctor.html" class="link1">진료시간</a>
+						<a href="map.html" class="link2">오시는길</a>
+						<a href="#" onclick="mainReserv('/html/index.html?mainActive=4');return false;" class="link3">진료예약</a>
+						<a href="tel:18775075" class="link4">전화문의</a>
+					</nav>
+				</div>
+				<nav class="menuList">
+					<ul>
+						<li><button type="button" onclick="subMenu();">백병원소개</button>
+							<ul class="subMenu">
+								<li><a href="hospinfo.html">백병원소개</a></li>
+								<li><a href="doctor.html">의료진소개</a></li>
+								<li><a href="hospshow.html">둘러보기</a></li>
+								<li><a href="map.html">오시는 길</a></li>
+							</ul>
+						</li>
+						<li><a href="list.html">어깨가 아파요</a></li>
+						<li><a href="list.html">관절이 불편해요</a></li>
+						<li><button type="button" onclick="subMenu();">커뮤니티</button>
+							<ul class="subMenu">
+								<li><a href="notice.html">백병원소식</a></li>
+								<li><a href="thanks.html">감사합니다</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="sign">
+					<!-- 로그인
+					<a href="#" class="link1">로그인</a>
+					<a href="#" class="link2">회원가입</a>
+					-->
+					<a href="#" class="link3">로그아웃</a>
+					<a href="#" class="link4">정보수정</a>
+				</div>
+			</div>
+		</div>
+		<p class="txtSwipe"><img src="/resource/images/txt_swipe.png" alt="여수백병원이 새로워졌습니다. 화면을 좌우로 밀어보세요."></p>
+	</header>
+	<!-- //header -->
+
+	<!-- content -->
+	<div id="container">
+		<div class="location">
+			<div class="locBox">
+				<button type="button" class="btn" onclick="locOpen();">백병원소개</button>
+				<ul class="list">
+					<li><a href="hospinfo.html">백병원소개</a></li>
+					<li><a href="notice.html">커뮤니티</a></li>
+				</ul>
+			</div>
+			<div class="locBox">
+				<button type="button" class="btn" onclick="locOpen();">의료진소개</button>
+				<ul class="list">
+					<li><a href="hospinfo.html">백병원소개</a></li>
+					<li><a href="doctor.html">의료진소개</a></li>
+					<li><a href="hospshow.html">둘러보기</a></li>
+					<li><a href="map.html">오시는 길</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="doctorList">
+
+			<div class="doctorBox">
+				<div class="picture"><img src="/resource/images/img_doc1.jpg" alt=""></div>
+				<div class="info">
+					<p class="name"><span>백창희</span> 병원장</p>
+					<p class="pd">정형외과 전문의</p>
+					<div class="link">
+						<a href="#" class="btnType1">진료예약</a>
+						<a href="#" class="btnType2">상세보기</a>
+					</div>
+				</div>
+				<div class="timeTable">
+					<table>
+						<colgroup>
+							<col>
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">시간</th>
+								<th scope="col">월</th>
+								<th scope="col">화</th>
+								<th scope="col">수</th>
+								<th scope="col">목</th>
+								<th scope="col">금</th>
+								<th scope="col">토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">오전</th>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope="row">오후</th>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope="row">비고</th>
+								<td colspan="6" class="etc">예약, 접수 서비스 센터 1877-5075(오십견치료)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="history open">
+					<button type="button" class="btn" onclick="historyOpen();">대표약력</button>
+					<div class="cont">
+						<ul class="list">
+							<li>2016 세계어깨학회 추진위원</li>
+							<li>2008 서울대병원 의료경영고위과정 수료 (AHP)</li>
+							<li>1995 경희대학교 정형외과 전문의 수료</li>
+							<li>대한관절학회 정회원</li>
+							<li>대한슬관절학회 정회원</li>
+							<li>대한스포츠의학회 정회원</li>
+							<li>대한견주관절학회 정회원</li>
+							<li>고관절 관절경 연구회 회원</li>
+							<li>(사)한국자치발전연구원</li>
+							<li>(사)한국인간개발연구원</li>
+							<li>네이버 답변의사 활동 중</li>
+						</ul>
+
+						<div class="box">
+							<h4 class="tit">학회</h4>
+							<ul class="list">
+								<li>2016 Shoulder arthroscopy and arthroplasty course <span>-Thailand Bangkok</span></li>
+								<li>ICSES 2016 international congress of shoulder and elbow surgery <span>-Korea Jeju</span></li>
+								<li>2016 Advanced Shoulder ArthroLatarjet Instructional Course <span>-France Annecy</span></li>
+								<li>2016 Update tendon transfer for irreparable rotator cuff tear <span>-France Paris</span></li>
+								<li>2015 Anncy Live surgery Iernational Shoulder advanced course <span>-France Annecy</span></li>
+								<li>San Diego Shoulder 2014 <span>-America</span></li>
+								<li>2013 Anncy Live surgery Iernational Shoulder advanced course <span>-France Annecy</span></li>
+								<li>29th Annual San Diego Meeting.2012 Arthroscopy, Arthroplasty. <span>-America</span></li>
+								<li>2012 SECEC-ESSSE Congress of the European Society for Surgery of the Shoulder and the Elbow <span>-Croatia Dubrovnik</span></li>
+								<li>Shoulder Tour 2011 <span>-France Lyon</span></li>
+								<li>ACASA 2011 <span>-Japan Okinawa</span></li>
+								<li>ICSES 2010 international congress of shoulder surgery <span>-United Kingdom Edinburgh</span></li>
+								<li>2009 22nd Congress of the European Society for Surgery of the shoulder and the elbow SECEC -ESSSES <span>-Spain Madrid</span></li>
+								<li>2009 Naples Lab Cource Florida <span>-America</span></li>
+								<li>2009 European Sports  Medicine & Knee Arthroplasty Meeting <span>-Germany</span></li>
+								<li>2008 Asian-Pacific Arthroscopy Workshop <span>-America Hawaii</span></li>
+								<li>2008 Kyung Hee Univ.3rd Fresh Shoulder Cadaveric Workshop <span>-Thailand Bangko</span></li>
+							</ul>
+						</div>
+
+						<div class="box">
+							<h4 class="tit">저서</h4>
+							<ul class="book">
+								<li><img src="/resource/images/img_book1.jpg" alt="어깨는 날개입니다."></li>
+								<li><img src="/resource/images/img_book2.jpg" alt="맞나? 오십견"></li>
+							</ul>
+						</div>
+
+						<div class="box">
+							<h4 class="tit">강의</h4>
+							<ul class="list">
+								<li>미국 LA 라디오 코리아 초청 어깨건강강좌 </li>
+								<li>광주광역시 공무원교육원 중견간부 과정 강의</li>
+								<li>전남도 공무원교육원 중견간부 과정 강의</li>
+								<li>경남 사천시 한국항공우주산업 직원 교육</li>
+								<li>포스코 직원대상 어깨건강강좌</li>
+								<li>해경 및 항만청 직원대상 건강강좌</li>
+								<li>지역별 교양강좌 강의</li>
+								<li>지역별 초청 아카데미</li>
+								<li>MBC 교양강좌 다수 강연</li>
+								<li>전남대, 호남대, 호남대 대학별 강의</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="doctorBox">
+				<div class="picture"><img src="/resource/images/img_doc2.jpg" alt=""></div>
+				<div class="info">
+					<p class="name"><span>신권철</span> 진료과장</p>
+					<p class="pd">내과 전문의</p>
+					<div class="link">
+						<a href="#" class="btnType2">상세보기</a>
+					</div>
+				</div>
+				<div class="timeTable">
+					<table>
+						<colgroup>
+							<col>
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">시간</th>
+								<th scope="col">월</th>
+								<th scope="col">화</th>
+								<th scope="col">수</th>
+								<th scope="col">목</th>
+								<th scope="col">금</th>
+								<th scope="col">토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">오전</th>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope="row">오후</th>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope="row">비고</th>
+								<td colspan="6" class="etc">예약, 접수 서비스 센터 1877-5075(오십견치료)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="history">
+					<button type="button" class="btn" onclick="historyOpen();">대표약력</button>
+					<div class="cont">
+						<ul class="list">
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="doctorBox">
+				<div class="picture"><img src="/resource/images/img_doc3.jpg" alt=""></div>
+				<div class="info">
+					<p class="name"><span>이승훈</span> 부원장</p>
+					<p class="pd">영상의학과 전문의</p>
+					<div class="link">
+						<a href="#" class="btnType2">상세보기</a>
+					</div>
+				</div>
+				<div class="timeTable">
+					<table>
+						<colgroup>
+							<col>
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">시간</th>
+								<th scope="col">월</th>
+								<th scope="col">화</th>
+								<th scope="col">수</th>
+								<th scope="col">목</th>
+								<th scope="col">금</th>
+								<th scope="col">토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">오전</th>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope="row">오후</th>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope="row">비고</th>
+								<td colspan="6" class="etc">예약, 접수 서비스 센터 1877-5075(오십견치료)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="history">
+					<button type="button" class="btn" onclick="historyOpen();">대표약력</button>
+					<div class="cont">
+						<ul class="list">
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="doctorBox"> 
+				<div class="picture"><img src="/resource/images/img_doc4.jpg" alt=""></div>
+				<div class="info">
+					<p class="name"><span>김옥환</span> 진료과장</p>
+					<p class="pd">마취통증과 전문의</p>
+					<div class="link">
+						<a href="#" class="btnType2">상세보기</a>
+					</div>
+				</div>
+				<div class="timeTable">
+					<table>
+						<colgroup>
+							<col>
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">시간</th>
+								<th scope="col">월</th>
+								<th scope="col">화</th>
+								<th scope="col">수</th>
+								<th scope="col">목</th>
+								<th scope="col">금</th>
+								<th scope="col">토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">오전</th>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope="row">오후</th>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope="row">비고</th>
+								<td colspan="6" class="etc">예약, 접수 서비스 센터 1877-5075(오십견치료)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="history">
+					<button type="button" class="btn" onclick="historyOpen();">대표약력</button>
+					<div class="cont">
+						<ul class="list">
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="doctorBox">
+				<div class="picture"><img src="/resource/images/img_doc5.jpg" alt=""></div>
+				<div class="info">
+					<p class="name"><span>장대일</span> 진료과장</p>
+					<p class="pd">마취통증과 전문의</p>
+					<div class="link">
+						<a href="#" class="btnType2">상세보기</a>
+					</div>
+				</div>
+				<div class="timeTable">
+					<table>
+						<colgroup>
+							<col>
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">시간</th>
+								<th scope="col">월</th>
+								<th scope="col">화</th>
+								<th scope="col">수</th>
+								<th scope="col">목</th>
+								<th scope="col">금</th>
+								<th scope="col">토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">오전</th>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope="row">오후</th>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope="row">비고</th>
+								<td colspan="6" class="etc">예약, 접수 서비스 센터 1877-5075(오십견치료)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="history">
+					<button type="button" class="btn" onclick="historyOpen();">대표약력</button>
+					<div class="cont">
+						<ul class="list">
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="doctorBox">
+				<div class="picture"><img src="/resource/images/img_doc6.jpg" alt=""></div>
+				<div class="info">
+					<p class="name"><span>민경준</span> 진료과장</p>
+					<p class="pd">영상의학과 전문의</p>
+					<div class="link">
+						<a href="#" class="btnType2">상세보기</a>
+					</div>
+				</div>
+				<div class="timeTable">
+					<table>
+						<colgroup>
+							<col>
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+							<col style="width:14%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">시간</th>
+								<th scope="col">월</th>
+								<th scope="col">화</th>
+								<th scope="col">수</th>
+								<th scope="col">목</th>
+								<th scope="col">금</th>
+								<th scope="col">토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">오전</th>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope="row">오후</th>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>진료</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope="row">비고</th>
+								<td colspan="6" class="etc">예약, 접수 서비스 센터 1877-5075(오십견치료)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="history">
+					<button type="button" class="btn" onclick="historyOpen();">대표약력</button>
+					<div class="cont">
+						<ul class="list">
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+							<li>약력</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<!-- //content -->
+
+	<!-- footer -->
+	<footer id="footer">
+		<div class="footerSnsLink">
+			<a href="#" class="naver">네이버블로그</a>
+			<a href="#" class="kakao">카카오톡</a>
+			<a href="#" class="fb">페이스북</a>
+			<a href="#" class="tw">트위터</a>
+		</div>
+		<div class="footerInfo">
+			<div class="footerLink">
+				<a href="privacy.html">개인정보취급방침</a>
+				<a href="right.html">환전권리장전</a>
+				<a href="#">비급여고지</a>
+				<a href="doctor.html">진료시간 안내</a>
+				<a href="map.html">찾아오시는 길</a>
+			</div>
+			<div class="footerHospInfo">
+				<p class="tel">어깨를 책임지는 여수백병원 <a href="tel:18775075">1877-5075</a></p>
+				<div class="address">
+					<p>전라남도 여수시 여서1로 50</p>
+					<p>병원장:백창희</p>
+					<p>사업자등록번호:471-91-18201</p>
+				</div>
+			</div>
+		</div>
+		<p class="footerCopy">Copyright &copy; 2019 YEOSU100 Hospital. All Right Reserved.</p>
+	</footer>
+	<!-- //footer -->
+</div>
+	
+</body>
+</html>
