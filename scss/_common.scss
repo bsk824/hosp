@@ -8,13 +8,18 @@ body {
 	-webkit-text-size-adjust: none;
 	margin: 0;
 	font: 1.3rem/1 "noto", "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
+	font-weight: 300;
+	letter-spacing: -.025em;
 	color: #111;
 }
 h1,h2,h3,h4,h5,h6,p,figure,ul,ol,dl,dd,fieldset,pre {margin: 0;}
 ol, ul, td, fieldset {padding: 0;}
 input, select, textarea, button, pre, a {
-	font-family: inherit;
-	font-size: inherit;
+	font : {
+		family: inherit;
+		size: inherit;
+		weight: inherit;
+	}
 	line-height: inherit;
 	letter-spacing: inherit;
 	color: inherit;
@@ -150,6 +155,7 @@ textarea {
 	align-items: center;
 	text-align: center;
 	box-sizing: border-box;
+	font-weight: 400;
 	&.iconCall {
 		&:after {
 			content: "";
@@ -159,6 +165,17 @@ textarea {
 			background: url('/resource/images/btn_call.png') no-repeat;
 			background-size: r(32);
 			vertical-align: r(-4);
+		}
+	}
+	&.iconReserv {
+		&:after {
+			content: "";
+			display: inline-block;
+			width: r(36); height: r(30);
+			margin-left: r(10);
+			background: url('/resource/images/btn_reserv.png') no-repeat;
+			background-size: r(36);
+			vertical-align: r(-6);
 		}
 	}
 }

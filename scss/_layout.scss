@@ -292,13 +292,14 @@
 		padding: r(60) 0;
 		> div {
 			display: inline-block;
-			width: r(320);
 			padding-left: r(30);
 			border-left: r(1) solid #ddd;
 			text-align: left;
 			vertical-align: top;
+			box-sizing: border-box;
 		}
 		.footerLink {
+			width: r(310);
 			a {
 				display: block;
 				~ a {margin-top: r(30);}
@@ -410,6 +411,10 @@
 	&.iconTit3 {
 		background: url('/resource/images/ico_tit3.png') no-repeat 100% 50%;
 		background-size: r(32);
+	}
+	&.iconTit7 {
+		background: url('/resource/images/ico_tit7.png') no-repeat 100% 0;
+		background-size: r(34);
 	}
 	.count {
 		@include pos($p: absolute, $t: 0, $r: 0);

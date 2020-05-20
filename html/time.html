@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>진료시간안내 &lt; 여수백병원</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+	<link rel="stylesheet" href="/resource/font/font.css">
+	<link rel="stylesheet" href="/resource/css/style.css">
+	<script type="text/javascript" src="/resource/js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="/resource/js/swiper.min.js"></script>
+	<script type="text/javascript" src="/resource/js/ui.js"></script>
+</head>
+<body>
+
+<div id="wrap" >
+
+	<!-- header -->
+	<header id="header">
+		<h1 class="logo"><a href="#">어깨는 날개입니다. 여수백 병원</a></h1>
+		<button type="button" class="btnMenu" onclick="gnb.open();"><span>메뉴</span></button>
+		<button type="button" class="btnSearch" onclick="headerSearch();">검색</button>
+		<button type="button" class="btnBack" onclick="history.back();">뒤로가기</button>
+		<div class="searchWrap">
+			<div class="inner">
+				<input type="text" class="inputTxt">
+				<button type="button" class="btnSearch"></button>
+			</div>
+		</div>
+		<div id="gnb">
+			<div class="inner">
+				<div class="head">
+					<div class="top">
+						<span class="user">
+							<!-- <button type="button">로그인</button> -->
+							오미정님
+							<span>naver</span>
+						</span>
+						<div class="sns">
+							<a href="#" class="blog">블로그</a>
+							<a href="#" class="tw">트위터</a>
+							<a href="#" class="fb">페이스북</a>
+							<a href="#" class="kakao">카카오톡</a>
+						</div>
+					</div>
+					<p class="notice"><a href="#">여수백병원 홈페이지가 리뉴얼 되었습니다.여수백병원 홈페이지가 리뉴얼 되었습니다.</a></p>
+					<nav class="quickLink">
+						<a href="time.html" class="link1">진료시간</a>
+						<a href="map.html" class="link2">오시는길</a>
+						<a href="#" onclick="mainReserv('/html/index.html?mainActive=4');return false;" class="link3">진료예약</a>
+						<a href="tel:18775075" class="link4">전화문의</a>
+					</nav>
+				</div>
+				<nav class="menuList">
+					<ul>
+						<li><button type="button" onclick="subMenu();">백병원소개</button>
+							<ul class="subMenu">
+								<li><a href="hospinfo.html">백병원소개</a></li>
+								<li><a href="mv.html">미션/비전</a></li>
+								<li><a href="doctor.html">의료진소개</a></li>
+								<li><a href="hospshow.html">둘러보기</a></li>
+								<li><a href="map.html">오시는 길</a></li>
+							</ul>
+						</li>
+						<li><a href="list.html">어깨가 아파요</a></li>
+						<li><a href="list.html">관절이 불편해요</a></li>
+						<li><button type="button" onclick="subMenu();">커뮤니티</button>
+							<ul class="subMenu">
+								<li><a href="notice.html">백병원소식</a></li>
+								<li><a href="thanks.html">감사합니다</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="sign">
+					<!-- 로그인
+					<a href="#" class="link1">로그인</a>
+					<a href="#" class="link2">회원가입</a>
+					-->
+					<a href="#" class="link3">로그아웃</a>
+					<a href="#" class="link4">정보수정</a>
+				</div>
+			</div>
+		</div>
+		<p class="txtSwipe"><img src="/resource/images/txt_swipe.png" alt="여수백병원이 새로워졌습니다. 화면을 좌우로 밀어보세요."></p>
+	</header>
+	<!-- //header -->
+
+	<!-- content -->
+	<div id="container">
+		<div class="location">
+			<div class="locBox">
+				<button type="button" class="btn" onclick="locOpen();">백병원소개</button>
+				<ul class="list">
+					<li><a href="hospinfo.html">백병원소개</a></li>
+					<li><a href="notice.html">커뮤니티</a></li>
+				</ul>
+			</div>
+			<div class="locBox">
+				<button type="button" class="btn" onclick="locOpen();">둘러보기</button>
+				<ul class="list">
+					<li><a href="hospinfo.html">백병원소개</a></li>
+					<li><a href="mv.html">미션/비전</a></li>
+					<li><a href="doctor.html">의료진소개</a></li>
+					<li><a href="hospshow.html">둘러보기</a></li>
+					<li><a href="map.html">오시는 길</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<section class="subSection timeInfo">
+
+			<h3 class="subTitle iconTit7">진료시간 안내 (외래/물리치료)</h3>
+			
+			<div class="timeTop">
+				<p class="row">
+					<span class="cell">
+						<span>평일</span>
+						<span class="right">07:00 ~ 16:00</span>
+					</span>
+					<span class="cell">
+						<span>내과</span>
+						<span class="right">08:00 ~ 17:00</span>
+					</span>
+				</p>
+				<p class="row">
+					<span>토요일/공휴일</span>
+					<span class="right">08:00 ~ 12:00</span>
+				</p>
+				<p class="row">
+					<span>일요일</span>
+					<span class="right ftc1">일요일은 진료하지 않습니다.</span>
+				</p>
+				<div class="inner">
+					<p>
+						세심한 진료와 대기시간을 줄이기 위해 <br>
+						[월,수,금] 백창희 원장님 진료는 사전 접수를 하오니 <br>
+						미리 전화 접수 후 내원 바랍니다.
+					</p>
+					<a href="tel:18775075" class="btnType1-lg iconCall">전화접수(1877-5075)</a>
+				</div>
+			</div>
+
+			<h3 class="subTitle">외래진료 절차</h3>
+			<ol class="careProcess">
+				<li>
+					<strong>00. 예약</strong>
+					전화/방문/인터넷으로 진료 예약을 신청합니다.
+				</li>
+				<li>
+					<strong>01. 접수</strong>
+					접수 창구에서 접수를 하시면 담당 진료지원팀이<br> 배정됩니다.
+				</li>
+				<li>
+					<strong>02. 안내</strong>
+					진료지원팀 담당자가 환자의 증상에 따라 상담 및<br> 진료안내를 해드립니다.
+				</li>
+				<li>
+					<strong>03. 진료</strong>
+					접수/예약 순서에 따라 간호사의 안내를 받으신 후 전문의 진료를 받습니다.
+				</li>
+				<li>
+					<strong>04. 설명</strong>
+					전문의 진료 후 상담사를 통한 2차 설명을 듣고 치료절차에 대한 안내를 받습니다.
+				</li>
+			</ol>
+
+			<h3 class="subTitle">의료진 진료시간</h3>
+			<section class="timeList">
+
+				<div class="timeBox">
+					<p class="name">백창희 / 정형외과</p>
+					<div class="timeTable">
+						<table>
+							<colgroup>
+								<col>
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">시간</th>
+									<th scope="col">월</th>
+									<th scope="col">화</th>
+									<th scope="col">수</th>
+									<th scope="col">목</th>
+									<th scope="col">금</th>
+									<th scope="col">토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">오전</th>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row">오후</th>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row">비고</th>
+									<td colspan="6" class="etc">월,수,금 사전접수 필요</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="timeBox">
+					<p class="name">신권철 / 내과</p>
+					<div class="timeTable">
+						<table>
+							<colgroup>
+								<col>
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">시간</th>
+									<th scope="col">월</th>
+									<th scope="col">화</th>
+									<th scope="col">수</th>
+									<th scope="col">목</th>
+									<th scope="col">금</th>
+									<th scope="col">토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">오전</th>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row">오후</th>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row">비고</th>
+									<td colspan="6" class="etc">월,수,금 사전접수 필요</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="timeBox">
+					<p class="name">이승훈 / 영상의학과</p>
+					<div class="timeTable">
+						<table>
+							<colgroup>
+								<col>
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">시간</th>
+									<th scope="col">월</th>
+									<th scope="col">화</th>
+									<th scope="col">수</th>
+									<th scope="col">목</th>
+									<th scope="col">금</th>
+									<th scope="col">토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">오전</th>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row">오후</th>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row">비고</th>
+									<td colspan="6" class="etc">월,수,금 사전접수 필요</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="timeBox">
+					<p class="name">김옥환 / 마취통증과</p>
+					<div class="timeTable">
+						<table>
+							<colgroup>
+								<col>
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">시간</th>
+									<th scope="col">월</th>
+									<th scope="col">화</th>
+									<th scope="col">수</th>
+									<th scope="col">목</th>
+									<th scope="col">금</th>
+									<th scope="col">토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">오전</th>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row">오후</th>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row">비고</th>
+									<td colspan="6" class="etc">월,수,금 사전접수 필요</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="timeBox">
+					<p class="name">장대일 / 마취통증과</p>
+					<div class="timeTable">
+						<table>
+							<colgroup>
+								<col>
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+								<col style="width:14%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">시간</th>
+									<th scope="col">월</th>
+									<th scope="col">화</th>
+									<th scope="col">수</th>
+									<th scope="col">목</th>
+									<th scope="col">금</th>
+									<th scope="col">토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">오전</th>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row">오후</th>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>수술</td>
+									<td>외래</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row">비고</th>
+									<td colspan="6" class="etc">월,수,금 사전접수 필요</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="btnWrap">
+					<a href="#" class="btnType1-lg iconReserv" onclick="mainReserv('/html/index.html?mainActive=4');return false;">온라인 예약 바로가기</a>
+				</div>
+			</section>
+		</section>
+
+	</div>
+	<!-- //content -->
+
+	<!-- footer -->
+	<footer id="footer">
+		<div class="footerSnsLink">
+			<a href="#" class="naver">네이버블로그</a>
+			<a href="#" class="kakao">카카오톡</a>
+			<a href="#" class="fb">페이스북</a>
+			<a href="#" class="tw">트위터</a>
+		</div>
+		<div class="footerInfo">
+			<div class="footerLink">
+				<a href="privacy.html">개인정보취급방침</a>
+				<a href="right.html">환전권리장전</a>
+				<a href="#">비급여고지</a>
+				<a href="doctor.html">진료시간 안내</a>
+				<a href="map.html">찾아오시는 길</a>
+			</div>
+			<div class="footerHospInfo">
+				<p class="tel">어깨를 책임지는 여수백병원 <a href="tel:18775075">1877-5075</a></p>
+				<div class="address">
+					<p>전라남도 여수시 여서1로 50</p>
+					<p>병원장:백창희</p>
+					<p>사업자등록번호:471-91-18201</p>
+				</div>
+			</div>
+		</div>
+		<p class="footerCopy">Copyright &copy; 2019 YEOSU100 Hospital. All Right Reserved.</p>
+	</footer>
+	<!-- //footer -->
+</div>
+	
+</body>
+</html>
