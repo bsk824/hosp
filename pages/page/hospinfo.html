@@ -1,27 +1,9 @@
-{% set pageVar = { title: '백병원소개 &lt; ' } %}
+{% set pageVar = { title: '백병원소개 &lt; ', loc: '백병원소개' } %}
 {% extends "inc/layout.html" %}
 
 {% block content -%}
 <div id="container">
-	<div class="location">
-		<div class="locBox">
-			<button type="button" class="btn" onclick="locOpen();">백병원소개</button>
-			<ul class="list">
-				<li><a href="hospinfo.html">백병원소개</a></li>
-				<li><a href="notice.html">커뮤니티</a></li>
-			</ul>
-		</div>
-		<div class="locBox">
-			<button type="button" class="btn" onclick="locOpen();">백병원소개</button>
-			<ul class="list">
-				<li><a href="hospinfo.html">백병원소개</a></li>
-				<li><a href="mv.html">미션/비전</a></li>
-				<li><a href="doctor.html">의료진소개</a></li>
-				<li><a href="hospshow.html">둘러보기</a></li>
-				<li><a href="map.html">오시는 길</a></li>
-			</ul>
-		</div>
-	</div>
+	{{ include("inc/loc1.html") | tabIndent(1) }}
 	<section class="subSection">
 		<section class="infoSection">
 			<h3 class="title"><span>목표</span></h3>

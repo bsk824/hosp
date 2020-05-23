@@ -98,26 +98,30 @@ const listTypeToggle = () => {
 }
 const gnb = {
 	doc : null,
-	gnb : null,
+	wrap : null,
 	open : () => {
+		event.stopPropagation();
+		
 		gnb.doc = document.querySelector('html');
-		gnb.gnb = document.querySelector('#gnb');
-		let inner = gnb.gnb.querySelector('.inner');
+		gnb.wrap = document.querySelector('#wrap');
 
-		gnb.doc.classList.add('scrollLock');
-		gnb.gnb.classList.add('open');
+		let gnbWrap = document.querySelector('#gnb');
 
-		gnb.gnb.addEventListener('click', () => {
-			gnb.close();
+		gnb.wrap.addEventListener('click', () => {
+			if(gnb.wrap.classList.contains('gnbOpen')) gnb.close();
 		});
-		inner.addEventListener('click', () => {
+		gnbWrap.addEventListener('click', () => {
 			event.stopPropagation();
 		});
+		
+		gnb.doc.classList.add('scrollLock');
+		gnb.wrap.classList.add('gnbOpen');
+
 
 	},
 	close : () => {
 		gnb.doc.classList.remove('scrollLock');
-		gnb.gnb.classList.remove('open');
+		gnb.wrap.classList.remove('gnbOpen');
 	}
 }
 const headerSearch = () => {

@@ -1,30 +1,13 @@
-{% set pageVar = { title: '경험한 여수백병원 &lt; ' } %}
+{% set pageVar = { title: '경험한 여수백병원 &lt; ', loc: '경험한 여수백병원' } %}
 {% extends "inc/layout.html" %}
 
 {% block content -%}
 <div id="container">
-	<div class="location">
-		<div class="locBox">
-			<button type="button" class="btn" onclick="locOpen();">커뮤니티</button>
-			<ul class="list">
-				<li><a href="hospinfo.html">백병원 소개</a></li>
-				<li><a href="notice.html">커뮤니티</a></li>
-			</ul>
-		</div>
-		<div class="locBox">
-			<button type="button" class="btn" onclick="locOpen();">경험한 여수백병원</button>
-			<ul class="list">
-				<li><a href="notice.html">백병원소식</a></li>
-				<li><a href="thanks.html">경험한 여수백병원</a></li>
-			</ul>
-		</div>
-	</div>
+	{{ include("inc/loc2.html") | tabIndent(1) }}
 	
 	<section class="subSection thanksWrap">
 		<h3 class="subTitle">내가 경험한 여수백병원</h3>
 		<p class="subTxt">생생한 후기를 남겨주신 모든 분들께 감사드리며 <br> 응원을 감동으로 돌려드릴 수 있도록 최선을 다하겠습니다. </p>
-
-		<a href="#" class="btnWrite">내가 경험한 여수백병원 글쓰기</a>
 		
 		<div class="blockList">
 			<ul class="cubeList">

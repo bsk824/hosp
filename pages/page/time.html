@@ -1,29 +1,11 @@
-{% set pageVar = { title: '진료시간안내 &lt; ' } %}
+{% set pageVar = { title: '진료시간안내 &lt; ', loc: '진료시간안내' } %}
 {% extends "inc/layout.html" %}
 
 {% block content -%}
 <div id="container">
-	<div class="location">
-		<div class="locBox">
-			<button type="button" class="btn" onclick="locOpen();">백병원소개</button>
-			<ul class="list">
-				<li><a href="hospinfo.html">백병원소개</a></li>
-				<li><a href="notice.html">커뮤니티</a></li>
-			</ul>
-		</div>
-		<div class="locBox">
-			<button type="button" class="btn" onclick="locOpen();">둘러보기</button>
-			<ul class="list">
-				<li><a href="hospinfo.html">백병원소개</a></li>
-				<li><a href="mv.html">미션/비전</a></li>
-				<li><a href="doctor.html">의료진소개</a></li>
-				<li><a href="hospshow.html">둘러보기</a></li>
-				<li><a href="map.html">오시는 길</a></li>
-			</ul>
-		</div>
-	</div>
+	{{ include("inc/loc1.html") | tabIndent(1) }}
 
-	<section class="subSection timeInfo">
+	<section class="subSection">
 
 		<h3 class="subTitle iconTit7">진료시간 안내 (외래/물리치료)</h3>
 		
@@ -57,7 +39,7 @@
 		</div>
 
 		<h3 class="subTitle">외래진료 절차</h3>
-		<ol class="careProcess">
+		<ol class="processList">
 			<li>
 				<strong>00. 예약</strong>
 				전화/방문/인터넷으로 진료 예약을 신청합니다.

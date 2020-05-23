@@ -281,6 +281,9 @@
 			@include pos($p: absolute, $b: 0, $r: 0);
 		}
 	}
+	.itemEtc {
+		@include pos($p: absolute, $b: 0, $l: 0, $r: 0);
+	}
 	.sns {
 		@include pos($p: absolute, $r: r(20), $b: r(10));
 		a {
@@ -347,6 +350,29 @@
 		.itemImg {
 			top: r(30);
 			left: 0;
+		}
+		&.type2 {
+			.itemBox {padding-bottom: r(80);}
+			.itemEtc {
+				@include pos($p: absolute, $b: 0, $l: 0, $r: 0);
+				box-sizing: border-box;
+				height: r(80);
+				padding-top: r(26);
+				border-top: r(1) solid #ddd;
+				span {
+					position: relative;
+					display: inline-block;
+					~ span {
+						margin-left: r(36);
+						&:after {
+							content: "";
+							@include pos($p: absolute, $t: r(2), $l: r(-20));
+							height: r(16);
+							border-left: r(1) solid #111;
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -662,58 +688,56 @@
 		}
 	}
 }
-.timeInfo {
-	.subTitle ~ .subTitle {margin-top: r(100);}
-	.timeTop {
-		border-bottom: r(1) solid #111;
-		.row {
-			display: flex;
-			padding: r(30) r(20) r(26);
-			> span {
-				flex: 1;
-			}
-			.cell {
-				position: relative;
-				width: 50%;
-				padding: 0 r(40) 0 0;
-				box-sizing: border-box;
-				~ .cell {
-					padding: 0 0 0 r(40);
-					&:after {
-						content: "";
-						@include pos($p: absolute, $t: 50%, $l: 0);
-						height: r(18);
-						margin-top: r(-14);
-						border-left: r(1) solid #111;
-					}
+.timeTop {
+	border-bottom: r(1) solid #111;
+	.row {
+		display: flex;
+		padding: r(30) r(20) r(26);
+		> span {
+			flex: 1;
+		}
+		.cell {
+			position: relative;
+			width: 50%;
+			padding: 0 r(40) 0 0;
+			box-sizing: border-box;
+			~ .cell {
+				padding: 0 0 0 r(40);
+				&:after {
+					content: "";
+					@include pos($p: absolute, $t: 50%, $l: 0);
+					height: r(18);
+					margin-top: r(-14);
+					border-left: r(1) solid #111;
 				}
-				span {float: left;}
-				.right {float: right;}
 			}
-			~ .row {border-top: r(1) solid #ddd;}
-			.right {text-align: right;}
+			span {float: left;}
+			.right {float: right;}
 		}
-		.inner {
-			padding: r(52) r(20) r(60);
-			text-align: center;
-			line-height: 1.4;
-			background: #f9f9f9;
-			border-top: r(1) solid #ddd;
-			p {margin: 0 0 r(40);}
-		}
+		~ .row {border-top: r(1) solid #ddd;}
+		.right {text-align: right;}
 	}
-	.timeBox {
-		margin-top: r(40);
-		~ .timeBox {margin-top: r(60);}
+	.inner {
+		padding: r(52) r(20) r(60);
+		text-align: center;
+		line-height: 1.4;
+		background: #f9f9f9;
+		border-top: r(1) solid #ddd;
+		p {margin: 0 0 r(40);}
 	}
-	.timeTable {margin-top: r(28);}
 }
-.careProcess {
+.timeBox {
+	margin-top: r(40);
+	~ .timeBox {margin-top: r(60);}
+}
+.timeTable {margin-top: r(28);}
+.processList {
 	border-bottom: r(1) solid #111;
 	li {
 		padding: r(20) 0 r(20) r(40);
 		line-height: 1.5;
 		~ li {border-top: r(1) solid #ddd;}
+		p ~ p {margin-top: r(20);}
 	}
 	strong {
 		display: block;
@@ -1342,4 +1366,9 @@
 		background: #00a0f1;
 		h3 {color: #00a0f1;}
 	}
+}
+
+.subTxt {
+	margin: r(10) 0 0 r(40);
+	line-height: 1.5;
 }

@@ -1,0 +1,173 @@
+{% set pageVar = { title: '백병원소식 &lt; ', loc: '영상소식' } %}
+{% extends "inc/layout.html" %}
+
+{% block content -%}
+<div id="container">
+	{{ include("inc/loc2.html") | tabIndent(1) }}
+	<section class="subSection">
+		<h3 class="subTitle iconTit9">영상소식</h3>
+		<div class="listWrap">
+			<div class="listHead">
+				<div class="listOpt">
+					<span class="listSort">
+						<select>
+							<option value="">최신순</option>
+						</select>
+					</span>
+				</div>
+				<div class="listSearch">
+					<button type="button" class="btnSearch" onclick="listSearch.open();">검색</button>
+					<span class="searchWrap">
+						<input type="text" class="inputTxt">
+						<button type="button" class="btnSearchClose" onclick="listSearch.close();">검색창 닫기</button>
+					</span>
+				</div>
+			</div>
+			<div class="listType">
+				<ul class="lineType type2">
+					<li>
+						<div class="itemBox">
+							<a href="#">
+								<div class="itemImg vod">
+									<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+									<span class="time">8:26</span>
+								</div>
+								<div class="itemInfo">
+									<span class="tit">여수백병원 고객과 함께하는 아카데미 “생각의 수준이 삶의 수준을 결정한다”</span>
+								</div>
+								<div class="itemEtc">
+									<span class="date">2019.12.12</span>
+									<span class="sort">백병원 영상</span>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="itemBox">
+							<a href="#">
+								<div class="itemImg vod">
+									<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+									<span class="time">8:26</span>
+								</div>
+								<div class="itemInfo">
+									<span class="tit">어깨는 날개입니다.</span>
+								</div>
+								<div class="itemEtc">
+									<span class="date">2019.12.12</span>
+									<span class="sort">백병원 영상</span>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="itemBox">
+							<a href="#">
+								<div class="itemImg vod">
+									<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+									<span class="time">8:26</span>
+								</div>
+								<div class="itemInfo">
+									<span class="tit">어깨는 날개입니다.</span>
+								</div>
+								<div class="itemEtc">
+									<span class="date">2019.12.12</span>
+									<span class="sort">백병원 영상</span>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="itemBox">
+							<a href="#">
+								<div class="itemImg vod">
+									<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+									<span class="time">8:26</span>
+								</div>
+								<div class="itemInfo">
+									<span class="tit">어깨는 날개입니다.</span>
+								</div>
+								<div class="itemEtc">
+									<span class="date">2019.12.12</span>
+									<span class="sort">백병원 영상</span>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="itemBox">
+							<a href="#">
+								<div class="itemImg vod">
+									<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+									<span class="time">8:26</span>
+								</div>
+								<div class="itemInfo">
+									<span class="tit">어깨는 날개입니다.</span>
+								</div>
+								<div class="itemEtc">
+									<span class="date">2019.12.12</span>
+									<span class="sort">백병원 영상</span>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="itemBox">
+							<a href="#">
+								<div class="itemImg vod">
+									<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+									<span class="time">8:26</span>
+								</div>
+								<div class="itemInfo">
+									<span class="tit">어깨는 날개입니다.</span>
+								</div>
+								<div class="itemEtc">
+									<span class="date">2019.12.12</span>
+									<span class="sort">백병원 영상</span>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="itemBox">
+							<a href="#">
+								<div class="itemImg vod">
+									<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+									<span class="time">8:26</span>
+								</div>
+								<div class="itemInfo">
+									<span class="tit">어깨는 날개입니다.</span>
+								</div>
+								<div class="itemEtc">
+									<span class="date">2019.12.12</span>
+									<span class="sort">백병원 영상</span>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="itemBox">
+							<a href="#">
+								<div class="itemImg vod">
+									<span class="imgbox"><img src="/resource/images/temp/320x180.jpg" alt=""></span>
+									<span class="time">8:26</span>
+								</div>
+								<div class="itemInfo">
+									<span class="tit">어깨는 날개입니다.</span>
+								</div>
+								<div class="itemEtc">
+									<span class="date">2019.12.12</span>
+									<span class="sort">백병원 영상</span>
+								</div>
+							</a>
+						</div>
+					</li>
+				</ul>
+				<div class="btnMoreList">
+					<button type="button">더보기</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</div>
+{%- endblock %}

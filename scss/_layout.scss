@@ -1,4 +1,22 @@
 .scrollLock body {overflow: hidden;}
+
+#wrap {
+	position: relative;
+	left: 0;
+	transition: all .3s;
+	&.gnbOpen {
+		left: r(600);
+		&:after {
+			content: "";
+			@include pos($p: absolute, $a: 0, $z: 1000);
+			background: rgba(0,0,0,.5);
+		}
+		#gnb {
+			left: 0;
+		}
+	}
+	
+}
 #header {
 	position: relative;
 	animation: background 10s infinite;
@@ -88,12 +106,11 @@
 	}
 }
 #gnb {
-	@include pos($p: fixed, $t: 0, $b: 0, $l: -100%, $z: 2);
-	width: 100%;
-	background: rgba(0,0,0,.5);
+	@include pos($p: fixed, $t: 0, $b: 0, $l: r(-600), $z: 2);
+	width: r(600);
+	transition: all .3s;
 	.inner {
-		width: r(600);
-		@include pos($p: absolute, $t: 0, $b: 0, $l: -100%);
+		@include pos($p: absolute, $a: 0);
 		background: #fff;
 	}
 	&.open {
@@ -400,6 +417,7 @@
 	padding: 0 0 r(30);
 	border-bottom: r(1) solid #111;
 	font-size: r(36);
+	~ .subTitle {margin-top: r(100)}
 	&.iconTit {
 		background: url('/resource/images/ico_tit.png') no-repeat 100% 50%;
 		background-size: r(41);
@@ -415,6 +433,14 @@
 	&.iconTit7 {
 		background: url('/resource/images/ico_tit7.png') no-repeat 100% 0;
 		background-size: r(34);
+	}
+	&.iconTit8 {
+		background: url('/resource/images/ico_tit8.png') no-repeat 100% 0;
+		background-size: r(43);
+	}
+	&.iconTit9 {
+		background: url('/resource/images/ico_tit9.png') no-repeat 100% 0;
+		background-size: r(42);
 	}
 	.count {
 		@include pos($p: absolute, $t: 0, $r: 0);

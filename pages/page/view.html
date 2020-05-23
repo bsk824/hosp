@@ -1,24 +1,9 @@
-{% set pageVar = { title: '백병원소식 &lt; ' } %}
+{% set pageVar = { title: '백병원소식 &lt; ', loc: '백병원소식' } %}
 {% extends "inc/layout.html" %}
 
 {% block content -%}
 <div id="container">
-	<div class="location">
-		<div class="locBox">
-			<button type="button" class="btn" onclick="locOpen();">커뮤니티</button>
-			<ul class="list">
-				<li><a href="hospinfo.html">백병원 소개</a></li>
-				<li><a href="notice.html">커뮤니티</a></li>
-			</ul>
-		</div>
-		<div class="locBox">
-			<button type="button" class="btn" onclick="locOpen();">백병원소식</button>
-			<ul class="list">
-				<li><a href="notice.html">백병원소식</a></li>
-				<li><a href="thanks.html">경험한 여수백병원</a></li>
-			</ul>
-		</div>
-	</div>
+	{{ include("inc/loc2.html") | tabIndent(1) }}
 
 	<section class="subSection">
 		<div class="bbsView">
